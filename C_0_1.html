@@ -1,0 +1,224 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Access Code</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_0_1_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_0_1_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_0_1_files/error.css">
+    <style type="text/css">
+          .form-group label.prefix { display: inline-block; width: 14em; }
+
+          div.indent-2 { margin-left: 15em; }
+
+          #select-access-code-set label:first-child { width: 16em; }
+
+          label.error { display: block; width: auto; }
+          label.error[for="OLDPASSWORD"] { display: inline-block; }
+        </style>
+    <script type="text/javascript" src="C_0_1_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_0_1_files/jquery-1.js"></script>
+    <script type="text/javascript" src="C_0_1_files/jquery.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_0_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript">
+          var fieldNameList = [];
+
+          
+
+          markFieldErrors(fieldNameList);
+
+        </script>
+    <script type="text/javascript" src="C_0_1_files/C_0_1a.js"></script>
+    <script type="text/javascript">
+          (function ($) {
+              $.toggleShowPassword = function (options) {
+                  $(options.control).bind('click', function () {
+                      if ($(options.control).is(':checked')) {
+                          $(options.field).attr('type', 'text');
+                      } else {
+                          $(options.field).attr('type', 'password');
+                      }
+                  })
+              };
+          }(jQuery));
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_0_1_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <span>System Info</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_0">Status</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_0_1">Access Code</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_3">Event Notifications</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_4">Battery Backup</a>
+                  </li>
+                </ul>
+              </div>
+              <h2>Device access code</h2>
+              <form name="pagepost" method="post" action="/xslt?PAGE=C_0_1a_POST&amp;ACTION=HIDEPASSWORD" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_0_1">
+                <div class="form-group">
+                  <div class="indent-2">
+                    <input type="submit" class="button" name="ACCESSCODE" value="Hide Access Code">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="indent-2">Note: "Hide/Show Access Code: 
+These buttons allow you to hide or display the device access code on 
+this and other pages.  This setting also controls the display or hiding 
+of Wi-Fi passwords."</div>
+                </div>
+              </form>
+              <form id="access-code-form" name="pagepost" method="post" action="/xslt?PAGE=C_0_1_POST&amp;ACTION=SAVE" novalidate="novalidate">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_0_1">
+                <div>
+                  <div class="form-group">
+                    <label for="OLDPASSWORD" class="prefix required">Current Access Code</label>
+                    <div class="indent-2">
+                      <span>
+                        <input type="text" id="OLDPASSWORD" name="OLDPASSWORD" required="required" autocomplete="off" value="5272584155" class="valid">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="prefix">Select Access Code</label>
+                    <span>
+                      <input type="radio" id="USE_DEFAULT_TRUE" name="USE_DEFAULT" value="TRUE" checked="checked">
+                      <label for="USE_DEFAULT_TRUE">Use default device access code as printed on the device label</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="prefix">&nbsp;</label>
+                    <span>
+                      <input type="radio" id="USE_DEFAULT_FALSE" name="USE_DEFAULT" value="FALSE">
+                      <label for="USE_DEFAULT_FALSE">Use a custom access code</label>
+                    </span>
+                  </div>
+                  <div class="indent-2">
+                    <p>Access codes must be at least 8 characters in 
+length, and must consist of characters from at least two of the 
+following sets: alphabetic characters, decimal digits, and the special 
+characters: @ # % &amp; * = ? /  &lt; and &gt;.</p>
+                    <fieldset class="stealth disabled-block" id="select-access-code-set">
+                      <legend>Custom access code setting</legend>
+                      <div class="form-group">
+                        <label for="PASSWORD" class="required">Enter New Access Code</label>
+                        <input type="text" class="disableop" id="PASSWORD" name="PASSWORD" required="required" autocomplete="off" title="Please enter a new access code conforming to the above requirements." disabled="disabled">
+                        <input type="hidden" class="disableop" id="PASSWORD_CONF" name="PASSWORD_CONF" value="1234" disabled="disabled">
+                      </div>
+                      <div class="form-group">
+                        <label for="HINT" class="required">Enter an Access Code Hint</label>
+                        <input type="text" class="disableop" id="HINT" name="HINT" size="26" maxlength="26" required="required" title="Please enter an access code hint (see below)." disabled="disabled">
+                      </div>
+                      <div class="form-group">Note: When you choose to 
+protect the device settings with a custom access code, you must also set
+ up an access code hint in case you forget your access code.  This hint 
+can be a word, phrase, or question that will help you remember your 
+access code if you forget it. This hint should not contain the access 
+code itself.</div>
+                    </fieldset>
+                  </div>
+                  <p align="right">
+                    <input type="submit" class="button" value="Save">
+                  </p>
+                  <div class="form-group">
+                    <img class="middle head-room" alt="system label location" src="C_0_1_files/label_5268_01.png" longdesc="The serial number, wireless network key, and device access code are provided on a label, usually placed on the left side of the device towards the back of the device.">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

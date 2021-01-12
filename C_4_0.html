@@ -1,0 +1,342 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Logs event log</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_4_0_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_4_0_files/tabs.css">
+    <style type="text/css">
+          .form-group form { display: inline-block; }
+          .form-group label.tablesidebold { width: 8em; }
+          .contents {
+              width:400px;
+              overflow:hidden;
+              margin-top:0;
+              margin-bottom:0;
+              font-size:12px;
+              word-wrap:break-word; 
+              white-space:pre-wrap; 
+              white-space:-moz-pre-wrap; 
+              white-space:-moz-pre-wrap !important; 
+              white-space:-pre-wrap; 
+              white-space:-o-pre-wrap; 
+           }
+        </style>
+  </head>
+  <body id="top">
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_4_0_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <span>Logs</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Event Log</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_1">System Log</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_2">Upgrade Log</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_3">Firewall Log</a>
+                  </li>
+                </ul>
+              </div>
+              <h2>Event Log</h2>
+              <div class="form-group">
+                <label class="tablesidebold">Clear Log</label>
+                <form name="pagepost1" method="post" action="xslt?PAGE=C_4_0_POST&amp;NEXTPAGE=C_4_0_POST" id="pagepost1">
+                  <input type="hidden" name="NONCE" value="f07aca90487a206">
+                  <input type="hidden" name="THISPAGE" value="C_4_0">
+                  <input type="hidden" name="FAMILY" value="">
+                  <input type="submit" class="button" value="Clear Log">
+                </form>
+              </div>
+              <div class="form-group">
+                <label class="tablesidebold" for="FAMILY">Display Filter</label>
+                <form name="pagepost2" method="post" action="xslt?PAGE=C_4_0&amp;NEXTPAGE=C_4_0" id="pagepost2">
+                  <input type="hidden" name="NONCE" value="f07aca90487a206">
+                  <select name="FAMILY" id="FAMILY">
+                    <option value="access">access</option>
+                    <option value="acs">acs</option>
+                    <option value="all" selected="selected">all</option>
+                    <option value="hurl">hurl</option>
+                    <option value="igmp">igmp</option>
+                    <option value="modem">modem</option>
+                    <option value="sys">system</option>
+                    <option value="voiced">voiced</option>
+                    <option value="wra">wra</option>
+                  </select>
+                  <input type="submit" class="button" value="Submit">
+                </form>
+              </div>
+              <table>
+                <caption class="stealth4">Event Log Lists</caption>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Date/Time</th>
+                    <th colspan="2">Event Description</th>
+                  </tr>
+                </thead>
+                <tbody><tr>
+                  <td>INF</td>
+                  <td>2021-01-11T23:04:00-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Successfully logged into a password protected page</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:45:12-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Successfully logged into a password protected page</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:39:28-08:00</td>
+                  <td></td>
+                  <td>
+                    <pre class="contents">Previous log entry repeated 1 times</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:39:22-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.65 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:24:34-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.65 is down</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:16:59-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.67 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:15:57-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.65 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:14:11-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.65 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:12:17-08:00</td>
+                  <td></td>
+                  <td>
+                    <pre class="contents">Previous log entry repeated 1 times</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:12:12-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.67 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:12:04-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Successfully logged into a password protected page</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:10:34-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.67 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:10:25-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.66 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:10:07-08:00</td>
+                  <td>acs</td>
+                  <td>
+                    <pre class="contents">bdc started.</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2021-01-11T22:09:42-08:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.65 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2020-09-22T12:16:20-07:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">ipnet0: Up on br1 with 162.227.167.60/22</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2020-09-22T12:16:20-07:00</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">DNS up DNS1:68.94.156.8, DNS2:68.94.157.8</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2020-09-22T12:16:20-07:00</td>
+                  <td>hurl</td>
+                  <td>
+                    <pre class="contents">err=4 name=NO_DHCP_SERVICE clear</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2020-09-22T12:16:08-07:00</td>
+                  <td>hurl</td>
+                  <td>
+                    <pre class="contents">err=15 name=EAPOL_FAILED clear</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>2020-09-22T12:16:08-07:00</td>
+                  <td>hurl</td>
+                  <td>
+                    <pre class="contents">err=4 name=NO_DHCP_SERVICE detect</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>P0000-00-00T00:07:08</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">Node 192.168.1.64 is up</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>P0000-00-00T00:06:44</td>
+                  <td>hurl</td>
+                  <td>
+                    <pre class="contents">err=15 name=EAPOL_FAILED detect</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>P0000-00-00T00:06:13</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">ipnet6: Up on br6 with 203.0.113.1/29</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>P0000-00-00T00:05:43</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">ipnet1: Up on br0 with 192.168.1.254/24</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INF</td>
+                  <td>P0000-00-00T00:04:34</td>
+                  <td>sys</td>
+                  <td>
+                    <pre class="contents">timezone changed to PST+8PDT+7,M3.2.0/2,M11.1.0/2</pre>
+                  </td>
+                </tr>
+              </tbody></table>
+              <p align="right">
+                <a href="#top">Scroll to top</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

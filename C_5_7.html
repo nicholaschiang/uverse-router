@@ -1,0 +1,221 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Diagnostics resets</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_7_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_7_files/tabs.css">
+    <style type="text/css">
+          /* Three column form items */
+          .form-group-3 { 
+            margin-bottom: 0.5em;
+            min-width: 59em; 
+          }
+          .col-a, .col-b, .col-c {
+            display: inline-block; 
+            vertical-align: top;
+          }
+          .col-a { 
+            width: 17em; 
+            font-weight: bold;
+            white-space: normal;
+          }
+          .col-b { 
+            width: 4em; 
+          }
+          .col-c { 
+            width: 30em;
+            padding-left: 2em; 
+          }
+
+        </style>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_5_7_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <span>Diagnostics</span>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Link Test</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_2">Link Tree</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_4">IP Utilities</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_5">NAT</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_6">Syslog</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_5_7">Resets</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_8">Speed Test</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_10">Application Statistics</a>
+                  </li>
+                </ul>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_5_7_POST&amp;NEXTPAGE=C_5_7_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_5_7">
+                <input type="hidden" name="BB_TYPE" value="DHCP">
+                <input type="hidden" name="WIFI0_EXIST" value="TRUE">
+                <div class="warning">
+                  <div class="warning-icon">
+                    <img src="C_5_7_files/icon_warning.gif" alt="warning">
+                  </div>
+                  <div class="warning-text"><b>Warning!</b><br>Resetting or rebooting may take several minutes before broadband service is restored.</div>
+                </div>
+                <h2>System &amp; Link Resets</h2>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Clear Device List</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESET_NODE" class="button" value="Clear">
+                  </div>
+                  <div class="col-c">Clears the device list.</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a"></div>
+                  <div class="col-b"></div>
+                  <div class="col-c">Devices will be re-listed as the 
+system rediscovers them. Clearing the device list deletes many 
+per-device settings you may have made (IP addresses, host application 
+mappings, etc).  It is recommended you only do this when instructed to 
+do so by customer care.</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Reset IP</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESET_IP" class="button" value="Reset">
+                  </div>
+                  <div class="col-c">Refreshes the Broadband IP Address</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Reset Broadband</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESET_BB" class="button" value="Reset">
+                  </div>
+                  <div class="col-c">Reestablishes your broadband link (physical and logical)</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Reboot System</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESTART" class="button" value="Reset">
+                  </div>
+                  <div class="col-c">Reboots your system</div>
+                </div>
+                <h2>Configuration Resets</h2>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Wi-Fi Configuration Reset</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESET_WIFI_CFG" class="button" value="Reset">
+                  </div>
+                  <div class="col-c">Resets the Wi-Fi AP settings on the gateway to factory defaults</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Firewall Configuration Reset</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="RESET_FW_CFG" class="button" value="Reset">
+                  </div>
+                  <div class="col-c">Resets the firewall configuration to factory defaults</div>
+                </div>
+                <h2>Reset to Factory Default State</h2>
+                <div class="warning">
+                  <div class="warning-icon">
+                    <img src="C_5_7_files/icon_warning.gif" alt="warning">
+                  </div>
+                  <div class="warning-text"><b>Warning!</b><br>Resetting
+ the system to the factory default state may cause your broadband 
+connection to not function properly and may require reconfiguration of 
+the system to reconnect the broadband service.<br></div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a">
+                    <label class="tablesidebold">Reset to Factory Default State</label>
+                  </div>
+                  <div class="col-b">
+                    <input type="submit" name="FACTORY_RESET" class="button" id="factoryResetButton" value="Reset" data-prompt="Are you sure? Click OK to proceed, or Cancel to cancel the factory reset.">
+                  </div>
+                  <div class="col-c">Erase all saved changes.</div>
+                </div>
+                <div class="form-group-3">
+                  <div class="col-a"></div>
+                  <div class="col-b"></div>
+                  <div class="col-c">This will revert all configuration parameters to their default state.</div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,190 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Application Statistics</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_10_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_10_files/tabs.css">
+    <script type="text/javascript" src="C_5_10_files/prototype.js"></script>
+    <script type="text/javascript" src="C_5_10_files/behaviour.js"></script>
+    <script type="text/javascript" src="C_5_10_files/style.js"></script>
+    <style type="text/css">
+          #device-table { width: 100%; }
+          #device-table td.actions { text-align: left; }
+
+          #traffic-statistics-table th, #traffic-statistics-table td { padding: 0 2em; }
+          
+          .col-a { 
+             width: 14em; 
+             margin-left: 0.5em;
+          }
+        </style>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_5_10_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <span>Diagnostics</span>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Link Test</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_2">Link Tree</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_4">IP Utilities</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_5">NAT</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_6">Syslog</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_7">Resets</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_8">Speed Test</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_5_10">Application Statistics</a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <h2>Application Statistics</h2>
+              <div>
+                <form name="pagepost1" method="post" action="xslt?PAGE=C_5_10" id="pagepost1">
+                  <input type="hidden" name="NONCE" value="f07aca90487a206">
+                  <input type="hidden" name="THISPAGE" value="C_5_10">
+                  <input type="hidden" name="CACHEDATA" value="FALSE">
+                  <input type="hidden" name="SMALLDATA" value="TRUE">
+                  <div class="indent-2">
+                    <input type="submit" class="button" value="Capture Latest Data">
+                  </div>
+                  <div class="form-group">
+                    <div class="indent-2">  (Note: Clicking this button retrieves the most recent traffic data of the system.)</div>
+                  </div>
+                </form>
+              </div>
+              <br>
+              <div>
+                <form name="pagepost2" method="post" action="xslt?PAGE=C_5_10" id="pagepost2">
+                  <input type="hidden" name="NONCE" value="f07aca90487a206">
+                  <input type="hidden" name="THISPAGE" value="C_5_10">
+                  <input type="hidden" name="CACHEDATA" value="TRUE">
+                  <input type="hidden" name="SMALLDATA" value="FALSE">
+                  <div class="indent-2">
+                    <input type="submit" class="button" value="Hide Small Data">
+                  </div>
+                  <div class="form-group">
+                    <div class="indent-2">  (Note: Hide/Show Small Data - This button helps in filtering out the traffic which is not significant) </div>
+                  </div>
+                </form>
+              </div>
+              <table id="device-table" class="centerdata" style="width: 100%; display: block; overflow: auto;">
+                <caption class="stealth4">Devices List</caption>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Hostname/IP/MACAddress</th>
+                    <th>Upstream<br>Kbps</th>
+                    <th>Downstream<br>Kbps</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody><tr>
+                  <td class="rowlabel">unknown</td>
+                  <td>5268ac<br>192.168.1.66<br>38:3b:c8:38:1e:1f</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td class="actions">
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_10a&amp;MACADDR=38:3b:c8:38:1e:1f&amp;SMALLDATA=TRUE">App Details</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rowlabel">Desktop/Laptop</td>
+                  <td>eevee<br>192.168.1.65<br>e8:b1:fc:f6:96:ff</td>
+                  <td>0.04</td>
+                  <td>0.33</td>
+                  <td class="actions">
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_10a&amp;MACADDR=e8:b1:fc:f6:96:ff&amp;SMALLDATA=TRUE">App Details</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rowlabel">Desktop/Laptop</td>
+                  <td>OnePlus5<br>192.168.1.67<br>94:65:2d:81:5d:3e</td>
+                  <td>0.18</td>
+                  <td>12.12</td>
+                  <td class="actions">
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_10a&amp;MACADDR=94:65:2d:81:5d:3e&amp;SMALLDATA=TRUE">App Details</a>
+                  </td>
+                </tr>
+              </tbody></table>
+              <table id="device-table" class="centerdata" style="width: 100%; display: block; overflow: auto;">
+                <caption class="stealth4">Applications List</caption>
+                <thead>
+                  <tr>
+                    <th>Application</th>
+                    <th>Category</th>
+                    <th>Upstream<br>Kbps</th>
+                    <th>Downstream<br>Kbps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

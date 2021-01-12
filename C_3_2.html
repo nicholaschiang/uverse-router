@@ -1,0 +1,127 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Firewall advanced configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_2_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_2_files/tabs.css">
+    <style type="text/css">
+          #enhanced-security-set label { width: 16em; }
+          #outbound-protocol-control-set label { width: 12em; }
+          #inbound-protocol-control-set label { width: 12em; }
+          #attack-detection-set label { width: 25em; }
+        </style>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_3_2_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <span>Firewall</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Status</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_1">Applications, Pinholes and DMZ</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_3_2">Advanced Configuration</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_3">Firewall Rules</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_4">Parental Control</a>
+                  </li>
+                </ul>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_3_2_POST&amp;NEXTPAGE=C_3_2_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_3_2">
+                <fieldset class="stealth" id="enhanced-security-set">
+                  <legend class="caplegh2">
+                    <h2>Enhanced Security</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label>Block Ping</label>
+                    <span>
+                      <input type="checkbox" name="BLOCK_PING" value="ON" id="BLOCK_PING_ON" checked="checked">
+                      <label for="BLOCK_PING_ON">Enable</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>Strict UDP Session Control</label>
+                    <span>
+                      <input type="checkbox" name="STRICT_UDP" value="ON" id="STRICT_UDP_ON">
+                      <label for="STRICT_UDP_ON">Enable</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="UDPTIMEOUT">UDP Session Timeout</label>
+                    <span><input type="text" id="UDPTIMEOUT" name="UDPTIMEOUT" size="5" maxlength="5" value="600">seconds (60-43200 seconds , default = 600 seconds)</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="TCPTIMEOUT">TCP Session Timeout</label>
+                    <span><input type="text" id="TCPTIMEOUT" name="TCPTIMEOUT" size="5" maxlength="5" value="28800">seconds (300-86400 seconds, default = 28800 seconds)</span>
+                  </div>
+                </fieldset>
+                <p align="right">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

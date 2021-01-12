@@ -1,0 +1,151 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Battery backup</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_0_4_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_0_4_files/tabs.css">
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_0_4_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <span>System Info</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_0">Status</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_1">Access Code</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_0_3">Event Notifications</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_0_4">Battery Backup</a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="imagetext">
+                <div class="imagetext_image" style="width:4em; margin: 20px 0;">
+                  <img src="C_0_4_files/small_icon_battery.png" alt="battery">
+                </div>
+                <div class="imagetext_text" style="width:49em">
+                  <h2>Emergency Battery Backup</h2>
+                </div>
+              </div>
+              <form method="post" action="xslt?PAGE=C_0_4">
+                <div class="form-group-2">
+                  <div class="col-a" style="font-size: 110%; width: 65%;"><b>Battery Status: </b>
+                      &nbsp;
+
+                      <b>Normal</b></div>
+                  <div class="col-b" style="font-size: 110%; width: 20%;">
+                    <input type="submit" class="button" value="Refresh">
+                  </div>
+                </div>
+                <p style="margin-left: 9em">Normal AC power, battery is removed</p>
+              </form>
+              <p style="width=70%; margin:0 10em 0 1.5em;">
+  If the AC power fails or the battery has problems the system can alert
+ you by a phone ring and a voice message played over the phone. You can 
+control the time of day the alert is issued or disable it altogether 
+using the controls below: 
+  </p>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_0_4_POST" id="pagepost">
+                <table>
+                  <caption class="stealth5">Battery Audible Alert</caption>
+                  <thead>
+                    <tr>
+                      <th>Line</th>
+                      <th>Times to allow alert</th>
+                      <th>Alerts Status</th>
+                      <th>Control Alerts</th>
+                    </tr>
+                  </thead>
+                  <tbody><tr>
+                    <td>Line 1</td>
+                    <td><input type="text" size="4" title="Line 1 start time" name="alert_start_time0" value="08:30"><input type="text" size="2" style="background-color:#CCCCCC" title="Line 1 start pm" name="start_pm0" value="AM" readonly="readonly
+                             "> - 
+                         <input type="text" size="4" title="Line 1 stop time" name="alert_stop_time0" value="08:30"><input type="text" size="2" style="background-color:#CCCCCC" title="Line 1 stop pm" name="stop_pm0" value="PM" readonly="readonly
+                             "></td>
+                    <td>Disabled</td>
+                    <td>
+                      <input type="checkbox" name="enabled0" id="ENABLE_ALERT-1">
+                      <label for="ENABLE_ALERT-1">Enable Alerts</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Line 2</td>
+                    <td><input type="text" size="4" title="Line 2 start time" name="alert_start_time1" value="08:30"><input type="text" size="2" style="background-color:#CCCCCC" title="Line 2 start pm" name="start_pm1" value="AM" readonly="readonly
+                             "> - 
+                         <input type="text" size="4" title="Line 2 stop time" name="alert_stop_time1" value="08:30"><input type="text" size="2" style="background-color:#CCCCCC" title="Line 2 stop pm" name="stop_pm1" value="PM" readonly="readonly
+                             "></td>
+                    <td>Disabled</td>
+                    <td>
+                      <input type="checkbox" name="enabled1" id="ENABLE_ALERT-2">
+                      <label for="ENABLE_ALERT-2">Enable Alerts</label>
+                    </td>
+                  </tr>
+                </tbody></table>
+                <p style="width=70%; margin:0 10em 0 1.5em;">Note: Enter the alert time in HH:MM format.</p>
+                <p style="margin-left:65%">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

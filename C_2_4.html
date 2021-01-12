@@ -1,0 +1,607 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>LAN IP address allocation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_4_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_4_files/tabs.css">
+    <script type="text/javascript" src="C_2_4_files/prototype.js"></script>
+    <script type="text/javascript" src="C_2_4_files/behaviour.js"></script>
+    <script type="text/javascript" src="C_2_4_files/style.js"></script>
+    <script type="text/javascript" src="C_2_4_files/dupipcheck.js"></script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_2_4_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <span>LAN</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_0">Status</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_1">Wi-Fi</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_2">Wired Interfaces</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_3">DHCP</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_2_4">LAN IP Address Allocation</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_5">Statistics</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_6">IPv6</a>
+                  </li>
+                </ul>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_2_4_POST&amp;NEXTPAGE=C_2_4_POST" onsubmit="javascript:return dupIPcheck()" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_2_4">
+                <h2>Public-Private NAT Mappings and Device IP Allocation</h2>
+                <p>This section allows you to configure the system to 
+allocate specific IP addresses to devices that are running in DHCP mode,
+ and map devices to particular static or public IP addresses, also known
+ as NAT mappings.</p>
+                <p>Alternately, you may also statically assign public IP
+ addresses on the devices themselves.  Statically addressed device 
+addresses will override settings made on this page.</p>
+                <p>For each device on the private network, you may 
+override the default DHCP server address, and manually specify a desired
+ IP Address for the DHCP server to issue to the device, or specify an 
+alternate pool to issue from.</p>
+                <p>Additionally, for Internet public hosting of 
+applications or servers associated with static or public IP addresses, 
+you can map a device to a specific public fixed IP address or to the 
+next unassigned address from the public pool.  The default public IP 
+device mapping is to the Router WAN IP address.</p>
+                <input type="hidden" name="NODEID" value="1">
+                <input type="hidden" name="CURRENT_IP" value="192.168.1.65">
+                <fieldset class="stealth">
+                  <legend class="stealth4">Device: eevee</legend>
+                  <div class="form-group">
+                    <label>Current Address</label>
+                    <span>192.168.1.65</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="tablesidevold">Device Status</label>
+                    <span>Connected DHCP</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="FWENABLE-1">Firewall</label>
+                    <span>
+                      <select name="FWENABLE" id="FWENABLE-1">
+                        <option value="TRUE" selected="selected">Enabled </option>
+                        <option value="FALSE">Disabled </option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="NETIDVAL-1">Address Assignment</label>
+                    <span>
+                      <select name="NETIDVAL" id="NETIDVAL-1">
+                        <option value="-1">Public (select WAN IP Mapping)</option>
+                        <option selected="selected" value="21#">Private from pool:192.168.1.0</option>
+                        <option value="21#192.168.1.64">Private Fixed: 192.168.1.64</option>
+                        <option value="21#192.168.1.65">Private Fixed: 192.168.1.65</option>
+                        <option value="21#192.168.1.66">Private Fixed: 192.168.1.66</option>
+                        <option value="21#192.168.1.67">Private Fixed: 192.168.1.67</option>
+                        <option value="21#192.168.1.68">Private Fixed: 192.168.1.68</option>
+                        <option value="21#192.168.1.69">Private Fixed: 192.168.1.69</option>
+                        <option value="21#192.168.1.70">Private Fixed: 192.168.1.70</option>
+                        <option value="21#192.168.1.71">Private Fixed: 192.168.1.71</option>
+                        <option value="21#192.168.1.72">Private Fixed: 192.168.1.72</option>
+                        <option value="21#192.168.1.73">Private Fixed: 192.168.1.73</option>
+                        <option value="21#192.168.1.74">Private Fixed: 192.168.1.74</option>
+                        <option value="21#192.168.1.75">Private Fixed: 192.168.1.75</option>
+                        <option value="21#192.168.1.76">Private Fixed: 192.168.1.76</option>
+                        <option value="21#192.168.1.77">Private Fixed: 192.168.1.77</option>
+                        <option value="21#192.168.1.78">Private Fixed: 192.168.1.78</option>
+                        <option value="21#192.168.1.79">Private Fixed: 192.168.1.79</option>
+                        <option value="21#192.168.1.80">Private Fixed: 192.168.1.80</option>
+                        <option value="21#192.168.1.81">Private Fixed: 192.168.1.81</option>
+                        <option value="21#192.168.1.82">Private Fixed: 192.168.1.82</option>
+                        <option value="21#192.168.1.83">Private Fixed: 192.168.1.83</option>
+                        <option value="21#192.168.1.84">Private Fixed: 192.168.1.84</option>
+                        <option value="21#192.168.1.85">Private Fixed: 192.168.1.85</option>
+                        <option value="21#192.168.1.86">Private Fixed: 192.168.1.86</option>
+                        <option value="21#192.168.1.87">Private Fixed: 192.168.1.87</option>
+                        <option value="21#192.168.1.88">Private Fixed: 192.168.1.88</option>
+                        <option value="21#192.168.1.89">Private Fixed: 192.168.1.89</option>
+                        <option value="21#192.168.1.90">Private Fixed: 192.168.1.90</option>
+                        <option value="21#192.168.1.91">Private Fixed: 192.168.1.91</option>
+                        <option value="21#192.168.1.92">Private Fixed: 192.168.1.92</option>
+                        <option value="21#192.168.1.93">Private Fixed: 192.168.1.93</option>
+                        <option value="21#192.168.1.94">Private Fixed: 192.168.1.94</option>
+                        <option value="21#192.168.1.95">Private Fixed: 192.168.1.95</option>
+                        <option value="21#192.168.1.96">Private Fixed: 192.168.1.96</option>
+                        <option value="21#192.168.1.97">Private Fixed: 192.168.1.97</option>
+                        <option value="21#192.168.1.98">Private Fixed: 192.168.1.98</option>
+                        <option value="21#192.168.1.99">Private Fixed: 192.168.1.99</option>
+                        <option value="21#192.168.1.100">Private Fixed: 192.168.1.100</option>
+                        <option value="21#192.168.1.101">Private Fixed: 192.168.1.101</option>
+                        <option value="21#192.168.1.102">Private Fixed: 192.168.1.102</option>
+                        <option value="21#192.168.1.103">Private Fixed: 192.168.1.103</option>
+                        <option value="21#192.168.1.104">Private Fixed: 192.168.1.104</option>
+                        <option value="21#192.168.1.105">Private Fixed: 192.168.1.105</option>
+                        <option value="21#192.168.1.106">Private Fixed: 192.168.1.106</option>
+                        <option value="21#192.168.1.107">Private Fixed: 192.168.1.107</option>
+                        <option value="21#192.168.1.108">Private Fixed: 192.168.1.108</option>
+                        <option value="21#192.168.1.109">Private Fixed: 192.168.1.109</option>
+                        <option value="21#192.168.1.110">Private Fixed: 192.168.1.110</option>
+                        <option value="21#192.168.1.111">Private Fixed: 192.168.1.111</option>
+                        <option value="21#192.168.1.112">Private Fixed: 192.168.1.112</option>
+                        <option value="21#192.168.1.113">Private Fixed: 192.168.1.113</option>
+                        <option value="21#192.168.1.114">Private Fixed: 192.168.1.114</option>
+                        <option value="21#192.168.1.115">Private Fixed: 192.168.1.115</option>
+                        <option value="21#192.168.1.116">Private Fixed: 192.168.1.116</option>
+                        <option value="21#192.168.1.117">Private Fixed: 192.168.1.117</option>
+                        <option value="21#192.168.1.118">Private Fixed: 192.168.1.118</option>
+                        <option value="21#192.168.1.119">Private Fixed: 192.168.1.119</option>
+                        <option value="21#192.168.1.120">Private Fixed: 192.168.1.120</option>
+                        <option value="21#192.168.1.121">Private Fixed: 192.168.1.121</option>
+                        <option value="21#192.168.1.122">Private Fixed: 192.168.1.122</option>
+                        <option value="21#192.168.1.123">Private Fixed: 192.168.1.123</option>
+                        <option value="21#192.168.1.124">Private Fixed: 192.168.1.124</option>
+                        <option value="21#192.168.1.125">Private Fixed: 192.168.1.125</option>
+                        <option value="21#192.168.1.126">Private Fixed: 192.168.1.126</option>
+                        <option value="21#192.168.1.127">Private Fixed: 192.168.1.127</option>
+                        <option value="21#192.168.1.128">Private Fixed: 192.168.1.128</option>
+                        <option value="21#192.168.1.129">Private Fixed: 192.168.1.129</option>
+                        <option value="21#192.168.1.130">Private Fixed: 192.168.1.130</option>
+                        <option value="21#192.168.1.131">Private Fixed: 192.168.1.131</option>
+                        <option value="21#192.168.1.132">Private Fixed: 192.168.1.132</option>
+                        <option value="21#192.168.1.133">Private Fixed: 192.168.1.133</option>
+                        <option value="21#192.168.1.134">Private Fixed: 192.168.1.134</option>
+                        <option value="21#192.168.1.135">Private Fixed: 192.168.1.135</option>
+                        <option value="21#192.168.1.136">Private Fixed: 192.168.1.136</option>
+                        <option value="21#192.168.1.137">Private Fixed: 192.168.1.137</option>
+                        <option value="21#192.168.1.138">Private Fixed: 192.168.1.138</option>
+                        <option value="21#192.168.1.139">Private Fixed: 192.168.1.139</option>
+                        <option value="21#192.168.1.140">Private Fixed: 192.168.1.140</option>
+                        <option value="21#192.168.1.141">Private Fixed: 192.168.1.141</option>
+                        <option value="21#192.168.1.142">Private Fixed: 192.168.1.142</option>
+                        <option value="21#192.168.1.143">Private Fixed: 192.168.1.143</option>
+                        <option value="21#192.168.1.144">Private Fixed: 192.168.1.144</option>
+                        <option value="21#192.168.1.145">Private Fixed: 192.168.1.145</option>
+                        <option value="21#192.168.1.146">Private Fixed: 192.168.1.146</option>
+                        <option value="21#192.168.1.147">Private Fixed: 192.168.1.147</option>
+                        <option value="21#192.168.1.148">Private Fixed: 192.168.1.148</option>
+                        <option value="21#192.168.1.149">Private Fixed: 192.168.1.149</option>
+                        <option value="21#192.168.1.150">Private Fixed: 192.168.1.150</option>
+                        <option value="21#192.168.1.151">Private Fixed: 192.168.1.151</option>
+                        <option value="21#192.168.1.152">Private Fixed: 192.168.1.152</option>
+                        <option value="21#192.168.1.153">Private Fixed: 192.168.1.153</option>
+                        <option value="21#192.168.1.154">Private Fixed: 192.168.1.154</option>
+                        <option value="21#192.168.1.155">Private Fixed: 192.168.1.155</option>
+                        <option value="21#192.168.1.156">Private Fixed: 192.168.1.156</option>
+                        <option value="21#192.168.1.157">Private Fixed: 192.168.1.157</option>
+                        <option value="21#192.168.1.158">Private Fixed: 192.168.1.158</option>
+                        <option value="21#192.168.1.159">Private Fixed: 192.168.1.159</option>
+                        <option value="21#192.168.1.160">Private Fixed: 192.168.1.160</option>
+                        <option value="21#192.168.1.161">Private Fixed: 192.168.1.161</option>
+                        <option value="21#192.168.1.162">Private Fixed: 192.168.1.162</option>
+                        <option value="21#192.168.1.163">Private Fixed: 192.168.1.163</option>
+                        <option value="21#192.168.1.164">Private Fixed: 192.168.1.164</option>
+                        <option value="21#192.168.1.165">Private Fixed: 192.168.1.165</option>
+                        <option value="21#192.168.1.166">Private Fixed: 192.168.1.166</option>
+                        <option value="21#192.168.1.167">Private Fixed: 192.168.1.167</option>
+                        <option value="21#192.168.1.168">Private Fixed: 192.168.1.168</option>
+                        <option value="21#192.168.1.169">Private Fixed: 192.168.1.169</option>
+                        <option value="21#192.168.1.170">Private Fixed: 192.168.1.170</option>
+                        <option value="21#192.168.1.171">Private Fixed: 192.168.1.171</option>
+                        <option value="21#192.168.1.172">Private Fixed: 192.168.1.172</option>
+                        <option value="21#192.168.1.173">Private Fixed: 192.168.1.173</option>
+                        <option value="21#192.168.1.174">Private Fixed: 192.168.1.174</option>
+                        <option value="21#192.168.1.175">Private Fixed: 192.168.1.175</option>
+                        <option value="21#192.168.1.176">Private Fixed: 192.168.1.176</option>
+                        <option value="21#192.168.1.177">Private Fixed: 192.168.1.177</option>
+                        <option value="21#192.168.1.178">Private Fixed: 192.168.1.178</option>
+                        <option value="21#192.168.1.179">Private Fixed: 192.168.1.179</option>
+                        <option value="21#192.168.1.180">Private Fixed: 192.168.1.180</option>
+                        <option value="21#192.168.1.181">Private Fixed: 192.168.1.181</option>
+                        <option value="21#192.168.1.182">Private Fixed: 192.168.1.182</option>
+                        <option value="21#192.168.1.183">Private Fixed: 192.168.1.183</option>
+                        <option value="21#192.168.1.184">Private Fixed: 192.168.1.184</option>
+                        <option value="21#192.168.1.185">Private Fixed: 192.168.1.185</option>
+                        <option value="21#192.168.1.186">Private Fixed: 192.168.1.186</option>
+                        <option value="21#192.168.1.187">Private Fixed: 192.168.1.187</option>
+                        <option value="21#192.168.1.188">Private Fixed: 192.168.1.188</option>
+                        <option value="21#192.168.1.189">Private Fixed: 192.168.1.189</option>
+                        <option value="21#192.168.1.190">Private Fixed: 192.168.1.190</option>
+                        <option value="21#192.168.1.191">Private Fixed: 192.168.1.191</option>
+                        <option value="21#192.168.1.192">Private Fixed: 192.168.1.192</option>
+                        <option value="21#192.168.1.193">Private Fixed: 192.168.1.193</option>
+                        <option value="21#192.168.1.194">Private Fixed: 192.168.1.194</option>
+                        <option value="21#192.168.1.195">Private Fixed: 192.168.1.195</option>
+                        <option value="21#192.168.1.196">Private Fixed: 192.168.1.196</option>
+                        <option value="21#192.168.1.197">Private Fixed: 192.168.1.197</option>
+                        <option value="21#192.168.1.198">Private Fixed: 192.168.1.198</option>
+                        <option value="21#192.168.1.199">Private Fixed: 192.168.1.199</option>
+                        <option value="21#192.168.1.200">Private Fixed: 192.168.1.200</option>
+                        <option value="21#192.168.1.201">Private Fixed: 192.168.1.201</option>
+                        <option value="21#192.168.1.202">Private Fixed: 192.168.1.202</option>
+                        <option value="21#192.168.1.203">Private Fixed: 192.168.1.203</option>
+                        <option value="21#192.168.1.204">Private Fixed: 192.168.1.204</option>
+                        <option value="21#192.168.1.205">Private Fixed: 192.168.1.205</option>
+                        <option value="21#192.168.1.206">Private Fixed: 192.168.1.206</option>
+                        <option value="21#192.168.1.207">Private Fixed: 192.168.1.207</option>
+                        <option value="21#192.168.1.208">Private Fixed: 192.168.1.208</option>
+                        <option value="21#192.168.1.209">Private Fixed: 192.168.1.209</option>
+                        <option value="21#192.168.1.210">Private Fixed: 192.168.1.210</option>
+                        <option value="21#192.168.1.211">Private Fixed: 192.168.1.211</option>
+                        <option value="21#192.168.1.212">Private Fixed: 192.168.1.212</option>
+                        <option value="21#192.168.1.213">Private Fixed: 192.168.1.213</option>
+                        <option value="21#192.168.1.214">Private Fixed: 192.168.1.214</option>
+                        <option value="21#192.168.1.215">Private Fixed: 192.168.1.215</option>
+                        <option value="21#192.168.1.216">Private Fixed: 192.168.1.216</option>
+                        <option value="21#192.168.1.217">Private Fixed: 192.168.1.217</option>
+                        <option value="21#192.168.1.218">Private Fixed: 192.168.1.218</option>
+                        <option value="21#192.168.1.219">Private Fixed: 192.168.1.219</option>
+                        <option value="21#192.168.1.220">Private Fixed: 192.168.1.220</option>
+                        <option value="21#192.168.1.221">Private Fixed: 192.168.1.221</option>
+                        <option value="21#192.168.1.222">Private Fixed: 192.168.1.222</option>
+                        <option value="21#192.168.1.223">Private Fixed: 192.168.1.223</option>
+                        <option value="21#192.168.1.224">Private Fixed: 192.168.1.224</option>
+                        <option value="21#192.168.1.225">Private Fixed: 192.168.1.225</option>
+                        <option value="21#192.168.1.226">Private Fixed: 192.168.1.226</option>
+                        <option value="21#192.168.1.227">Private Fixed: 192.168.1.227</option>
+                        <option value="21#192.168.1.228">Private Fixed: 192.168.1.228</option>
+                        <option value="21#192.168.1.229">Private Fixed: 192.168.1.229</option>
+                        <option value="21#192.168.1.230">Private Fixed: 192.168.1.230</option>
+                        <option value="21#192.168.1.231">Private Fixed: 192.168.1.231</option>
+                        <option value="21#192.168.1.232">Private Fixed: 192.168.1.232</option>
+                        <option value="21#192.168.1.233">Private Fixed: 192.168.1.233</option>
+                        <option value="21#192.168.1.234">Private Fixed: 192.168.1.234</option>
+                        <option value="21#192.168.1.235">Private Fixed: 192.168.1.235</option>
+                        <option value="21#192.168.1.236">Private Fixed: 192.168.1.236</option>
+                        <option value="21#192.168.1.237">Private Fixed: 192.168.1.237</option>
+                        <option value="21#192.168.1.238">Private Fixed: 192.168.1.238</option>
+                        <option value="21#192.168.1.239">Private Fixed: 192.168.1.239</option>
+                        <option value="21#192.168.1.240">Private Fixed: 192.168.1.240</option>
+                        <option value="21#192.168.1.241">Private Fixed: 192.168.1.241</option>
+                        <option value="21#192.168.1.242">Private Fixed: 192.168.1.242</option>
+                        <option value="21#192.168.1.243">Private Fixed: 192.168.1.243</option>
+                        <option value="21#192.168.1.244">Private Fixed: 192.168.1.244</option>
+                        <option value="21#192.168.1.245">Private Fixed: 192.168.1.245</option>
+                        <option value="21#192.168.1.246">Private Fixed: 192.168.1.246</option>
+                        <option value="21#192.168.1.247">Private Fixed: 192.168.1.247</option>
+                        <option value="21#192.168.1.248">Private Fixed: 192.168.1.248</option>
+                        <option value="21#192.168.1.249">Private Fixed: 192.168.1.249</option>
+                        <option value="21#192.168.1.250">Private Fixed: 192.168.1.250</option>
+                        <option value="21#192.168.1.251">Private Fixed: 192.168.1.251</option>
+                        <option value="21#192.168.1.252">Private Fixed: 192.168.1.252</option>
+                        <option value="21#192.168.1.253">Private Fixed: 192.168.1.253</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="tableidebold" for="NATPOOLIDVAL-1">WAN IP Mapping</label>
+                    <span>
+                      <select name="NATPOOLIDVAL" id="NATPOOLIDVAL-1">
+                        <option value="-1" selected="selected">Router WAN IP address (default)</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>Cascaded Router: </label>
+                    <span>No</span>
+                  </div>
+                  <div class="form-group">
+                    <label>SLAAC IPv6 Address</label>
+                    <span>2600:1700:4385:c010:8075:10fd:5d2c:2ca8</span>
+                  </div>
+                  <div class="form-group">
+                    <label>Address from DHCP6 Pool</label>
+                    <span>2600:1700:4385:c010::54c</span>
+                  </div>
+                  <div class="form-group">
+                    <label>Assign Fixed IPv6 Address</label>
+                    <span>2600:1700:4385:c010::<input type="text" size="15" maxlength="10" name="DHCP6FIXED1" id="DHCP6FIXED-1"></span>
+                  </div>
+                </fieldset>
+                <input type="hidden" name="NODEID" value="2">
+                <input type="hidden" name="CURRENT_IP" value="192.168.1.67">
+                <fieldset class="stealth">
+                  <legend class="stealth4">Device: OnePlus5</legend>
+                  <div class="form-group">
+                    <label>Current Address</label>
+                    <span>192.168.1.67</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="tablesidevold">Device Status</label>
+                    <span>Connected DHCP</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="FWENABLE-2">Firewall</label>
+                    <span>
+                      <select name="FWENABLE" id="FWENABLE-2">
+                        <option value="TRUE" selected="selected">Enabled </option>
+                        <option value="FALSE">Disabled </option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="NETIDVAL-2">Address Assignment</label>
+                    <span>
+                      <select name="NETIDVAL" id="NETIDVAL-2">
+                        <option value="-1">Public (select WAN IP Mapping)</option>
+                        <option selected="selected" value="21#">Private from pool:192.168.1.0</option>
+                        <option value="21#192.168.1.64">Private Fixed: 192.168.1.64</option>
+                        <option value="21#192.168.1.65">Private Fixed: 192.168.1.65</option>
+                        <option value="21#192.168.1.66">Private Fixed: 192.168.1.66</option>
+                        <option value="21#192.168.1.67">Private Fixed: 192.168.1.67</option>
+                        <option value="21#192.168.1.68">Private Fixed: 192.168.1.68</option>
+                        <option value="21#192.168.1.69">Private Fixed: 192.168.1.69</option>
+                        <option value="21#192.168.1.70">Private Fixed: 192.168.1.70</option>
+                        <option value="21#192.168.1.71">Private Fixed: 192.168.1.71</option>
+                        <option value="21#192.168.1.72">Private Fixed: 192.168.1.72</option>
+                        <option value="21#192.168.1.73">Private Fixed: 192.168.1.73</option>
+                        <option value="21#192.168.1.74">Private Fixed: 192.168.1.74</option>
+                        <option value="21#192.168.1.75">Private Fixed: 192.168.1.75</option>
+                        <option value="21#192.168.1.76">Private Fixed: 192.168.1.76</option>
+                        <option value="21#192.168.1.77">Private Fixed: 192.168.1.77</option>
+                        <option value="21#192.168.1.78">Private Fixed: 192.168.1.78</option>
+                        <option value="21#192.168.1.79">Private Fixed: 192.168.1.79</option>
+                        <option value="21#192.168.1.80">Private Fixed: 192.168.1.80</option>
+                        <option value="21#192.168.1.81">Private Fixed: 192.168.1.81</option>
+                        <option value="21#192.168.1.82">Private Fixed: 192.168.1.82</option>
+                        <option value="21#192.168.1.83">Private Fixed: 192.168.1.83</option>
+                        <option value="21#192.168.1.84">Private Fixed: 192.168.1.84</option>
+                        <option value="21#192.168.1.85">Private Fixed: 192.168.1.85</option>
+                        <option value="21#192.168.1.86">Private Fixed: 192.168.1.86</option>
+                        <option value="21#192.168.1.87">Private Fixed: 192.168.1.87</option>
+                        <option value="21#192.168.1.88">Private Fixed: 192.168.1.88</option>
+                        <option value="21#192.168.1.89">Private Fixed: 192.168.1.89</option>
+                        <option value="21#192.168.1.90">Private Fixed: 192.168.1.90</option>
+                        <option value="21#192.168.1.91">Private Fixed: 192.168.1.91</option>
+                        <option value="21#192.168.1.92">Private Fixed: 192.168.1.92</option>
+                        <option value="21#192.168.1.93">Private Fixed: 192.168.1.93</option>
+                        <option value="21#192.168.1.94">Private Fixed: 192.168.1.94</option>
+                        <option value="21#192.168.1.95">Private Fixed: 192.168.1.95</option>
+                        <option value="21#192.168.1.96">Private Fixed: 192.168.1.96</option>
+                        <option value="21#192.168.1.97">Private Fixed: 192.168.1.97</option>
+                        <option value="21#192.168.1.98">Private Fixed: 192.168.1.98</option>
+                        <option value="21#192.168.1.99">Private Fixed: 192.168.1.99</option>
+                        <option value="21#192.168.1.100">Private Fixed: 192.168.1.100</option>
+                        <option value="21#192.168.1.101">Private Fixed: 192.168.1.101</option>
+                        <option value="21#192.168.1.102">Private Fixed: 192.168.1.102</option>
+                        <option value="21#192.168.1.103">Private Fixed: 192.168.1.103</option>
+                        <option value="21#192.168.1.104">Private Fixed: 192.168.1.104</option>
+                        <option value="21#192.168.1.105">Private Fixed: 192.168.1.105</option>
+                        <option value="21#192.168.1.106">Private Fixed: 192.168.1.106</option>
+                        <option value="21#192.168.1.107">Private Fixed: 192.168.1.107</option>
+                        <option value="21#192.168.1.108">Private Fixed: 192.168.1.108</option>
+                        <option value="21#192.168.1.109">Private Fixed: 192.168.1.109</option>
+                        <option value="21#192.168.1.110">Private Fixed: 192.168.1.110</option>
+                        <option value="21#192.168.1.111">Private Fixed: 192.168.1.111</option>
+                        <option value="21#192.168.1.112">Private Fixed: 192.168.1.112</option>
+                        <option value="21#192.168.1.113">Private Fixed: 192.168.1.113</option>
+                        <option value="21#192.168.1.114">Private Fixed: 192.168.1.114</option>
+                        <option value="21#192.168.1.115">Private Fixed: 192.168.1.115</option>
+                        <option value="21#192.168.1.116">Private Fixed: 192.168.1.116</option>
+                        <option value="21#192.168.1.117">Private Fixed: 192.168.1.117</option>
+                        <option value="21#192.168.1.118">Private Fixed: 192.168.1.118</option>
+                        <option value="21#192.168.1.119">Private Fixed: 192.168.1.119</option>
+                        <option value="21#192.168.1.120">Private Fixed: 192.168.1.120</option>
+                        <option value="21#192.168.1.121">Private Fixed: 192.168.1.121</option>
+                        <option value="21#192.168.1.122">Private Fixed: 192.168.1.122</option>
+                        <option value="21#192.168.1.123">Private Fixed: 192.168.1.123</option>
+                        <option value="21#192.168.1.124">Private Fixed: 192.168.1.124</option>
+                        <option value="21#192.168.1.125">Private Fixed: 192.168.1.125</option>
+                        <option value="21#192.168.1.126">Private Fixed: 192.168.1.126</option>
+                        <option value="21#192.168.1.127">Private Fixed: 192.168.1.127</option>
+                        <option value="21#192.168.1.128">Private Fixed: 192.168.1.128</option>
+                        <option value="21#192.168.1.129">Private Fixed: 192.168.1.129</option>
+                        <option value="21#192.168.1.130">Private Fixed: 192.168.1.130</option>
+                        <option value="21#192.168.1.131">Private Fixed: 192.168.1.131</option>
+                        <option value="21#192.168.1.132">Private Fixed: 192.168.1.132</option>
+                        <option value="21#192.168.1.133">Private Fixed: 192.168.1.133</option>
+                        <option value="21#192.168.1.134">Private Fixed: 192.168.1.134</option>
+                        <option value="21#192.168.1.135">Private Fixed: 192.168.1.135</option>
+                        <option value="21#192.168.1.136">Private Fixed: 192.168.1.136</option>
+                        <option value="21#192.168.1.137">Private Fixed: 192.168.1.137</option>
+                        <option value="21#192.168.1.138">Private Fixed: 192.168.1.138</option>
+                        <option value="21#192.168.1.139">Private Fixed: 192.168.1.139</option>
+                        <option value="21#192.168.1.140">Private Fixed: 192.168.1.140</option>
+                        <option value="21#192.168.1.141">Private Fixed: 192.168.1.141</option>
+                        <option value="21#192.168.1.142">Private Fixed: 192.168.1.142</option>
+                        <option value="21#192.168.1.143">Private Fixed: 192.168.1.143</option>
+                        <option value="21#192.168.1.144">Private Fixed: 192.168.1.144</option>
+                        <option value="21#192.168.1.145">Private Fixed: 192.168.1.145</option>
+                        <option value="21#192.168.1.146">Private Fixed: 192.168.1.146</option>
+                        <option value="21#192.168.1.147">Private Fixed: 192.168.1.147</option>
+                        <option value="21#192.168.1.148">Private Fixed: 192.168.1.148</option>
+                        <option value="21#192.168.1.149">Private Fixed: 192.168.1.149</option>
+                        <option value="21#192.168.1.150">Private Fixed: 192.168.1.150</option>
+                        <option value="21#192.168.1.151">Private Fixed: 192.168.1.151</option>
+                        <option value="21#192.168.1.152">Private Fixed: 192.168.1.152</option>
+                        <option value="21#192.168.1.153">Private Fixed: 192.168.1.153</option>
+                        <option value="21#192.168.1.154">Private Fixed: 192.168.1.154</option>
+                        <option value="21#192.168.1.155">Private Fixed: 192.168.1.155</option>
+                        <option value="21#192.168.1.156">Private Fixed: 192.168.1.156</option>
+                        <option value="21#192.168.1.157">Private Fixed: 192.168.1.157</option>
+                        <option value="21#192.168.1.158">Private Fixed: 192.168.1.158</option>
+                        <option value="21#192.168.1.159">Private Fixed: 192.168.1.159</option>
+                        <option value="21#192.168.1.160">Private Fixed: 192.168.1.160</option>
+                        <option value="21#192.168.1.161">Private Fixed: 192.168.1.161</option>
+                        <option value="21#192.168.1.162">Private Fixed: 192.168.1.162</option>
+                        <option value="21#192.168.1.163">Private Fixed: 192.168.1.163</option>
+                        <option value="21#192.168.1.164">Private Fixed: 192.168.1.164</option>
+                        <option value="21#192.168.1.165">Private Fixed: 192.168.1.165</option>
+                        <option value="21#192.168.1.166">Private Fixed: 192.168.1.166</option>
+                        <option value="21#192.168.1.167">Private Fixed: 192.168.1.167</option>
+                        <option value="21#192.168.1.168">Private Fixed: 192.168.1.168</option>
+                        <option value="21#192.168.1.169">Private Fixed: 192.168.1.169</option>
+                        <option value="21#192.168.1.170">Private Fixed: 192.168.1.170</option>
+                        <option value="21#192.168.1.171">Private Fixed: 192.168.1.171</option>
+                        <option value="21#192.168.1.172">Private Fixed: 192.168.1.172</option>
+                        <option value="21#192.168.1.173">Private Fixed: 192.168.1.173</option>
+                        <option value="21#192.168.1.174">Private Fixed: 192.168.1.174</option>
+                        <option value="21#192.168.1.175">Private Fixed: 192.168.1.175</option>
+                        <option value="21#192.168.1.176">Private Fixed: 192.168.1.176</option>
+                        <option value="21#192.168.1.177">Private Fixed: 192.168.1.177</option>
+                        <option value="21#192.168.1.178">Private Fixed: 192.168.1.178</option>
+                        <option value="21#192.168.1.179">Private Fixed: 192.168.1.179</option>
+                        <option value="21#192.168.1.180">Private Fixed: 192.168.1.180</option>
+                        <option value="21#192.168.1.181">Private Fixed: 192.168.1.181</option>
+                        <option value="21#192.168.1.182">Private Fixed: 192.168.1.182</option>
+                        <option value="21#192.168.1.183">Private Fixed: 192.168.1.183</option>
+                        <option value="21#192.168.1.184">Private Fixed: 192.168.1.184</option>
+                        <option value="21#192.168.1.185">Private Fixed: 192.168.1.185</option>
+                        <option value="21#192.168.1.186">Private Fixed: 192.168.1.186</option>
+                        <option value="21#192.168.1.187">Private Fixed: 192.168.1.187</option>
+                        <option value="21#192.168.1.188">Private Fixed: 192.168.1.188</option>
+                        <option value="21#192.168.1.189">Private Fixed: 192.168.1.189</option>
+                        <option value="21#192.168.1.190">Private Fixed: 192.168.1.190</option>
+                        <option value="21#192.168.1.191">Private Fixed: 192.168.1.191</option>
+                        <option value="21#192.168.1.192">Private Fixed: 192.168.1.192</option>
+                        <option value="21#192.168.1.193">Private Fixed: 192.168.1.193</option>
+                        <option value="21#192.168.1.194">Private Fixed: 192.168.1.194</option>
+                        <option value="21#192.168.1.195">Private Fixed: 192.168.1.195</option>
+                        <option value="21#192.168.1.196">Private Fixed: 192.168.1.196</option>
+                        <option value="21#192.168.1.197">Private Fixed: 192.168.1.197</option>
+                        <option value="21#192.168.1.198">Private Fixed: 192.168.1.198</option>
+                        <option value="21#192.168.1.199">Private Fixed: 192.168.1.199</option>
+                        <option value="21#192.168.1.200">Private Fixed: 192.168.1.200</option>
+                        <option value="21#192.168.1.201">Private Fixed: 192.168.1.201</option>
+                        <option value="21#192.168.1.202">Private Fixed: 192.168.1.202</option>
+                        <option value="21#192.168.1.203">Private Fixed: 192.168.1.203</option>
+                        <option value="21#192.168.1.204">Private Fixed: 192.168.1.204</option>
+                        <option value="21#192.168.1.205">Private Fixed: 192.168.1.205</option>
+                        <option value="21#192.168.1.206">Private Fixed: 192.168.1.206</option>
+                        <option value="21#192.168.1.207">Private Fixed: 192.168.1.207</option>
+                        <option value="21#192.168.1.208">Private Fixed: 192.168.1.208</option>
+                        <option value="21#192.168.1.209">Private Fixed: 192.168.1.209</option>
+                        <option value="21#192.168.1.210">Private Fixed: 192.168.1.210</option>
+                        <option value="21#192.168.1.211">Private Fixed: 192.168.1.211</option>
+                        <option value="21#192.168.1.212">Private Fixed: 192.168.1.212</option>
+                        <option value="21#192.168.1.213">Private Fixed: 192.168.1.213</option>
+                        <option value="21#192.168.1.214">Private Fixed: 192.168.1.214</option>
+                        <option value="21#192.168.1.215">Private Fixed: 192.168.1.215</option>
+                        <option value="21#192.168.1.216">Private Fixed: 192.168.1.216</option>
+                        <option value="21#192.168.1.217">Private Fixed: 192.168.1.217</option>
+                        <option value="21#192.168.1.218">Private Fixed: 192.168.1.218</option>
+                        <option value="21#192.168.1.219">Private Fixed: 192.168.1.219</option>
+                        <option value="21#192.168.1.220">Private Fixed: 192.168.1.220</option>
+                        <option value="21#192.168.1.221">Private Fixed: 192.168.1.221</option>
+                        <option value="21#192.168.1.222">Private Fixed: 192.168.1.222</option>
+                        <option value="21#192.168.1.223">Private Fixed: 192.168.1.223</option>
+                        <option value="21#192.168.1.224">Private Fixed: 192.168.1.224</option>
+                        <option value="21#192.168.1.225">Private Fixed: 192.168.1.225</option>
+                        <option value="21#192.168.1.226">Private Fixed: 192.168.1.226</option>
+                        <option value="21#192.168.1.227">Private Fixed: 192.168.1.227</option>
+                        <option value="21#192.168.1.228">Private Fixed: 192.168.1.228</option>
+                        <option value="21#192.168.1.229">Private Fixed: 192.168.1.229</option>
+                        <option value="21#192.168.1.230">Private Fixed: 192.168.1.230</option>
+                        <option value="21#192.168.1.231">Private Fixed: 192.168.1.231</option>
+                        <option value="21#192.168.1.232">Private Fixed: 192.168.1.232</option>
+                        <option value="21#192.168.1.233">Private Fixed: 192.168.1.233</option>
+                        <option value="21#192.168.1.234">Private Fixed: 192.168.1.234</option>
+                        <option value="21#192.168.1.235">Private Fixed: 192.168.1.235</option>
+                        <option value="21#192.168.1.236">Private Fixed: 192.168.1.236</option>
+                        <option value="21#192.168.1.237">Private Fixed: 192.168.1.237</option>
+                        <option value="21#192.168.1.238">Private Fixed: 192.168.1.238</option>
+                        <option value="21#192.168.1.239">Private Fixed: 192.168.1.239</option>
+                        <option value="21#192.168.1.240">Private Fixed: 192.168.1.240</option>
+                        <option value="21#192.168.1.241">Private Fixed: 192.168.1.241</option>
+                        <option value="21#192.168.1.242">Private Fixed: 192.168.1.242</option>
+                        <option value="21#192.168.1.243">Private Fixed: 192.168.1.243</option>
+                        <option value="21#192.168.1.244">Private Fixed: 192.168.1.244</option>
+                        <option value="21#192.168.1.245">Private Fixed: 192.168.1.245</option>
+                        <option value="21#192.168.1.246">Private Fixed: 192.168.1.246</option>
+                        <option value="21#192.168.1.247">Private Fixed: 192.168.1.247</option>
+                        <option value="21#192.168.1.248">Private Fixed: 192.168.1.248</option>
+                        <option value="21#192.168.1.249">Private Fixed: 192.168.1.249</option>
+                        <option value="21#192.168.1.250">Private Fixed: 192.168.1.250</option>
+                        <option value="21#192.168.1.251">Private Fixed: 192.168.1.251</option>
+                        <option value="21#192.168.1.252">Private Fixed: 192.168.1.252</option>
+                        <option value="21#192.168.1.253">Private Fixed: 192.168.1.253</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="tableidebold" for="NATPOOLIDVAL-2">WAN IP Mapping</label>
+                    <span>
+                      <select name="NATPOOLIDVAL" id="NATPOOLIDVAL-2">
+                        <option value="-1" selected="selected">Router WAN IP address (default)</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>Cascaded Router: </label>
+                    <span>No</span>
+                  </div>
+                  <div class="form-group">
+                    <label>SLAAC IPv6 Address</label>
+                    <span>2600:1700:4385:c010:8890:722a:ca3a:7da8</span>
+                  </div>
+                  <div class="form-group">
+                    <label>Assign Fixed IPv6 Address</label>
+                    <span>2600:1700:4385:c010::<input type="text" size="15" maxlength="10" name="DHCP6FIXED2" id="DHCP6FIXED-2"></span>
+                  </div>
+                </fieldset>
+                <p align="right">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

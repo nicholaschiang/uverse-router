@@ -1,0 +1,202 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Diagnostics Syslog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_6_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_6_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_5_6_files/error.css">
+    <script type="text/javascript" src="C_5_6_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_5_6_files/jquery-1.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+          $(function(){
+
+          $('[name="ENABLE_SYSLOG"]')
+            .change(function(){
+              $('[data-toggled-by="ENABLE_SYSLOG"]')
+              .prop('disabled',!$(this).is(':checked'))
+              .prop('required',$(this).is(':checked'));
+              })
+            .change();
+
+          });
+
+          function enableNotification() {
+            if ( $("[name=ENABLE_SYSLOG]")[0].checked ) {
+              $(".ip-label").addClass("required");
+            } else {
+               $(".ip-label").removeClass("required");
+            }
+          }
+
+          $(document).ready( function() {
+            $("[name=ENABLE_SYSLOG]").on('click', enableNotification);
+            enableNotification();
+          });   
+        </script>
+    <style type="text/css">
+          .form-group label:first-child { width: 15em; }
+        </style>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_5_6', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript">
+
+          var fieldNameList = [];
+
+          
+          
+          markFieldErrors(fieldNameList);
+
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_5_6_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <span>Diagnostics</span>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Link Test</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_2">Link Tree</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_4">IP Utilities</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_5">NAT</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_5_6">Syslog</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_7">Resets</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_8">Speed Test</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_5_10">Application Statistics</a>
+                  </li>
+                </ul>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_5_6_POST&amp;NEXTPAGE=C_5_6_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_5_6">
+                <fieldset class="stealth">
+                  <legend class="caplegh2">
+                    <h2>Syslog to Remote Host</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label>Syslog to Remote Host is</label>
+                    <span>Disabled</span>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <input type="checkbox" name="ENABLE_SYSLOG" value="ON" id="ENABLE_SYSLOG_ON">
+                    <label for="ENABLE_SYSLOG_ON">Enable</label>
+                  </div>
+                  <div class="form-group">
+                    <label for="SVRLOC" class="ip-label">Server Address</label>
+                    <span>
+                      <input type="text" class="disableop" name="SVRLOC" id="SVRLOC" data-toggled-by="ENABLE_SYSLOG" disabled="disabled">
+                    </span>
+                  </div>
+                  <div class="form-group-3">
+                    <div class="col-a" style="width:15em"></div>
+                    <div class="col-b" style="width:30em">Note: Enter valid IPv4 address, an IPv6 address or a FQDN</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="SVRPORT" class="ip-label">Server Port</label>
+                    <span><input type="text" class="disableop" name="SVRPORT" size="5" id="SVRPORT" style="margin-right:0.5em" data-toggled-by="ENABLE_SYSLOG" value="514" disabled="disabled">Default: 514</span>
+                  </div>
+                </fieldset>
+                <p align="right">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

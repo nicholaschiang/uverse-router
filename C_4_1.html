@@ -1,0 +1,885 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Logs system log</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_4_1_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_4_1_files/tabs.css">
+    <style>
+           .contents {
+              width:450px;
+              overflow:hidden;
+              margin-top:0;
+              font-size:12px;
+              word-wrap:break-word; 
+              white-space:pre-wrap; 
+              white-space:-moz-pre-wrap; 
+              white-space:-moz-pre-wrap !important; 
+              white-space:-pre-wrap; 
+              white-space:-o-pre-wrap;  
+           }
+           td {
+             vertical-align:top;
+           }
+        </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <img src="C_4_1_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <span>Logs</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Event Log</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_4_1">System Log</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_2">Upgrade Log</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_4_3">Firewall Log</a>
+                  </li>
+                </ul>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_4_1_POST&amp;NEXTPAGE=C_4_1_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_4_1">
+                <h2>System Log</h2>
+                <div class="form-group">
+                  <label class="tablesidebold">Clear Log</label>
+                  <span>
+                    <input type="submit" name="CLEAR_LOG" class="button" value="Clear Log">
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label class="tablesidebold">Display Filter</label>
+                  <label for="SEVERITY">Severity</label>
+                  <select name="SVR" id="SEVERITY" class="textmono" size="1">
+                    <option value="debug" selected="selected">debug or higher</option>
+                    <option value="info">info or higher</option>
+                    <option value="notice">notice or higher</option>
+                    <option value="warn">warn or higher</option>
+                    <option value="err">err or higher</option>
+                    <option value="crit">crit or higher</option>
+                    <option value="alert">alert or higher</option>
+                    <option value="emerg">emerg or higher</option>
+                  </select>
+                  <label for="DAEMON">Daemon</label>
+                  <select name="FAMILY" id="DAEMON" class="textmono">
+                    <option value="all" selected="selected">(All)</option>
+                    <option value="cmd">cmd</option>
+                    <option value="crashlog">crashlog</option>
+                    <option value="cwmd">cwmd</option>
+                    <option value="dhcp6d">dhcp6d</option>
+                    <option value="dhcpd">dhcpd</option>
+                    <option value="dlnamgr">dlnamgr</option>
+                    <option value="dnsd">dnsd</option>
+                    <option value="dsld">dsld</option>
+                    <option value="elogd">elogd</option>
+                    <option value="fwlld">fwlld</option>
+                    <option value="hpnainfo">hpnainfo</option>
+                    <option value="httpd">httpd</option>
+                    <option value="lld2d">lld2d</option>
+                    <option value="lmd">lmd</option>
+                    <option value="mbusd">mbusd</option>
+                    <option value="mcpmgrd">mcpmgrd</option>
+                    <option value="mifd">mifd</option>
+                    <option value="nodesd">nodesd</option>
+                    <option value="ntpd">ntpd</option>
+                    <option value="pkgd">pkgd</option>
+                    <option value="pwrd">pwrd</option>
+                    <option value="radvd">radvd</option>
+                    <option value="radvdmgr">radvdmgr</option>
+                    <option value="rgwdbsetup">rgwdbsetup</option>
+                    <option value="root">root</option>
+                    <option value="rulemgrd">rulemgrd</option>
+                    <option value="serviceinit">serviceinit</option>
+                    <option value="syslog">syslog</option>
+                    <option value="syslogd">syslogd</option>
+                    <option value="syslogmgrd">syslogmgrd</option>
+                    <option value="timemgrd">timemgrd</option>
+                    <option value="ulogd">ulogd</option>
+                    <option value="ustatsd">ustatsd</option>
+                    <option value="voiced">voiced</option>
+                    <option value="vzonead">vzonead</option>
+                    <option value="wifievtd">wifievtd</option>
+                    <option value="wifimgrd">wifimgrd</option>
+                    <option value="wproxy">wproxy</option>
+                  </select>
+                  <input type="submit" name="FILTER" class="button" value="Submit">
+                </div>
+                <div class="form-group">
+                  <label class="tablesidebold">Insert Mark in Log</label>
+                  <span>
+                    <input type="submit" name="MARK" class="button" value="Insert Mark">
+                  </span>
+                </div>
+              </form>
+              <table>
+                <caption class="stealth4">System Log Lists</caption>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Date/Time</th>
+                    <th class="contents">Event Description</th>
+                  </tr>
+                </thead>
+                <tbody><tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:09</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: localhost.localdomain</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:09</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=18) family 2, port 80 to 127.0.0.1 scope 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:08</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:08</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=17) family 2, port 51009 to 192.168.1.254 scope 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:08</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:08</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=16) family 2, port 51008 to 192.168.1.254 scope 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:07</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:07</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=15) family 10, port 443 to fe80::3a3b:c8ff:fe38:1e15 scope 20</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:07</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:07</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=14) family 10, port 80 to fe80::3a3b:c8ff:fe38:1e15 scope 20</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:05</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:05</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=13) family 10, port 443 to 2600:1700:4385:c010::1 scope 20</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:05</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:05</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=12) family 10, port 80 to 2600:1700:4385:c010::1 scope 20</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:04</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:04</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=10) family 2, port 443 to 192.168.1.254 scope 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:04</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:04</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: bind(fd=9) family 2, port 80 to 192.168.1.254 scope 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: hurlmod using config /mnt/web/conf/hurl_conf.xml</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: init module (soap)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: init module (hurl)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: init module (rewrite)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: init module (xslt)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: init module (file)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 23:03:03</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3106]: process[3106] started</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:16:23</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;rulemgrd[3726]: update_handler: More than 3 consecutive iterations: flag = 0 iterations = 3 err = 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:40</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_qtn_config: wifi_dev_qtn_config finished</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:36</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_qtn_config: Wireless config: deviceid=9</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:36</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: reconfiguring deviceid= 9, params: 'ap0_param-custom_key'</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_brcm_config: wifi_device_enable_bss() failed code 211, Resource temporarily unavailable</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_enable_bss: wlctl -i wl0 bss -C 2 up failed code 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_enable_bss: wlctl -i wl0 bss -C 0 up failed code 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless tx power percent set to 100,</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless interference sensitivity set to 4000, 128</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless interference mode set to 2</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless config: wifi_device_set_intfmitigation failed: Resource temporarily unavailable</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_set_intfmitigation, set interference mitigation mode 3, 3 failed, return is 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless 11h_enabled set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless DOT11d set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless ACL policy set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless device setup advanced</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless WVIOCSWMFSTATUS set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless current bitrate is: 144400 kbps</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless TX RATES set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless uapsd set to 32</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless WMM set to 32</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_set_wme, setting wmm/wme failed</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:33</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless MODE set to 32,amsdu set to 0, ampdu set to 1, RIFS set to 0, sgi set to 1, spatial streams set to 2, stbc set to 0 </pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:31</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless channel index set to 0(chan 0), sec=1, coexistence=0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:31</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless DTIM set to 3</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:31</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless device setup the basics</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:31</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless set countryinfo to Q1/937</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:30</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless authentication set to WPA2-PSK</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:30</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless ssid broadcast (closed) set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:30</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless authentication set to WPA2-PSK</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:30</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless ssid broadcast (closed) set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:30</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless SSID 0 set to Dadda</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:29</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless mbss set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:29</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless config: disable bss</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:29</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_brcm_config: nvram preconfig complete</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:28</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless config: disable wireless service daemons</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:27</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless config: disable phy</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:15:27</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_brcm_config: Wireless config: deviceid=3</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:27</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: reconfiguring deviceid= 3, params: 'ap0_param-custom_key'</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:15:13</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3662]: wifi_dev_brcm_validate_ap: tw_ulib_aes_decrypt_from_base64 failed: -1 </pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:14:41</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;rulemgrd[3726]: update_handler: More than 3 consecutive iterations: flag = 0 iterations = 3 err = 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listening on routing socket on fd #23 for interface updates</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: peers refreshed</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen normally on 6 br1 fe80::3a3b:c8ff:fe38:1e14 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen normally on 5 lo ::1 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen normally on 4 br1 2001:506:7438:4481::1 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen normally on 3 br1 162.227.167.60 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen normally on 2 lo 127.0.0.1 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen and drop on 1 v6wildcard :: UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: Listen and drop on 0 v4wildcard 0.0.0.0 UDP 123</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>notice</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: proto: precision = 10.844 usec</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>notice</td>
+                  <td>Jan 11 22:13:45</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;ntpd[16431]: ntpd 4.2.6p5@1.2349 Tue Sep 22 16:14:15 UTC 2020 (1)</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:42</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_qtn_config: wifi_dev_qtn_config finished</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:40</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_qtn_set_ssid: qtn_ssid is Dadda</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:38</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_qtn_config: Wireless config: deviceid=9</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:38</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: reconfiguring deviceid= 9, params: 'ap0_param-default_key', 'ssid0_ssid', 'ap0_param-custom_key'</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:28</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;lmd[3673]: dhcp6c0: XID mismatch</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:28</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;lmd[3673]: dhcp6c0: XID mismatch</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3662]: DNS server name: attlocal.net</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;httpd[3662]: bind(fd=23) family 10, port 443 to fe80::3a3b:c8ff:fe38:1e15 scope 20</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_dev_brcm_config: wifi_device_enable_bss() failed code 211, Resource temporarily unavailable</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_enable_bss: wlctl -i wl0 bss -C 2 up failed code 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_enable_bss: wlctl -i wl0 bss -C 0 up failed code 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless tx power percent set to 100,</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless interference sensitivity set to 4000, 128</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless interference mode set to 2</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless config: wifi_device_set_intfmitigation failed: Resource temporarily unavailable</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>err</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: wifi_device_set_intfmitigation, set interference mitigation mode 3, 3 failed, return is 211</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless 11h_enabled set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless DOT11d set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless ACL policy set to 0</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless device setup advanced</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless WVIOCSWMFSTATUS set to 1</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless current bitrate is: 144400 kbps</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>info</td>
+                  <td>Jan 11 22:13:26</td>
+                  <td>
+                    <pre class="contents">daemon:&nbsp;wifimgrd[3756]: Wireless TX RATES set to 0</pre>
+                  </td>
+                </tr>
+              </tbody></table>
+              <p>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_1&amp;OFFSET=100&amp;COUNT=100&amp;FAMILY=&amp;SVR=">Next</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

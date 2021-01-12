@@ -1,0 +1,214 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Firewall rules</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_3_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_3_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_3_files/jquery-ui_002.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_3_files/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_3_files/jquery.css">
+    <script type="text/javascript" src="C_3_3_files/jquery_002.js"></script>
+    <script type="text/javascript" src="C_3_3_files/jquery-ui.js"></script>
+    <script type="text/javascript" src="C_3_3_files/jquery.js"></script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container" style="width:80%">
+      <div>
+        <img src="C_3_3_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <span>Firewall</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Status</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_1">Applications, Pinholes and DMZ</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_2">Advanced Configuration</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_3_3">Firewall Rules</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_4">Parental Control</a>
+                  </li>
+                </ul>
+              </div>
+              <style type="text/css">
+  .tblUserFilters {border:0; text-align:left;}
+  .tblUserFilters td {border:0;}, .tblUserFilters th { padding:2px;border:0; }
+  table.centerdata td { border:0;text-align:left; }
+  </style>
+              <script id="jsSource" type="text/javascript">
+
+$(function () {
+
+    $('#tblUserFilters').appendGrid('init', {
+        caption: 'Firewall Rules',
+        initRows: 1,
+        hideRowNumColumn : true,
+        hideButtons: { append: false, removeLast: true, insert: true, remove: false, moveUp: false, moveDown: false },
+        columns: [
+
+                { name: 'Direction', display: 'Type', type: 'select', ctrlOptions: { 0: 'Input', 1: 'Output' }, ctrlCss: { width: '100%'} },
+                { name: 'Source', display: 'Source', type: 'text', ctrlAttr: { list: 'dlNodes' }, ctrlCss: { width: '100%'} },
+                { name: 'Destination', display: 'Destination', type: 'text', ctrlAttr: { list: 'dlNodes' }, ctrlCss: { width: '100%'} },
+                { name: 'Range', display: 'Port Range', type:'custom', value:'1:1',
+                  customBuilder: function (parent, idPrefix, name, uniqueIndex) {
+                      var ctrlId = idPrefix + '_' + name + '_' + uniqueIndex;
+                      var ctrl = document.createElement('span');
+                      $(ctrl).attr({ id: ctrlId, name: ctrlId }).appendTo(parent);
+                      
+                      $('<input>', { type: 'text', maxLength: 5, id: ctrlId + '_StartPort', name: ctrlId + '_StartPort' }).css('width', '40px').appendTo(ctrl).spinner({ max: 65535, min: 1 });
+                      $('<input>', { type: 'text', maxLength: 5, id: ctrlId + '_EndPort', name: ctrlId + '_EndPort' }).css('width', '40px').appendTo(ctrl).spinner({ max: 65535, min: 1 });
+                      
+                      return ctrl;
+                  },
+
+                  customGetter: function (idPrefix, name, uniqueIndex) {
+                      var ctrlId = idPrefix + '_' + name + '_' + uniqueIndex;
+                      var start = $('#' + ctrlId + '_StartPort').spinner('value');
+                      var end = $('#' + ctrlId + '_EndPort').spinner('value');
+                      return start + ':' + end;
+                  },
+                  customSetter: function (idPrefix, name, uniqueIndex, value) {
+                      var ctrlId = idPrefix + '_' + name + '_' + uniqueIndex;
+                      var sep = null;
+                      if (value != null){ 
+                          sep = value.split(':');
+                      }
+
+                      $('#' + ctrlId + '_StartPort').spinner('value', sep == null ? 1 : sep[0]);
+                      $('#' + ctrlId + '_EndPort').spinner('value', sep == null ? 1 : sep[1]);
+                  }
+                },
+            { name: 'Protocol', display: 'Protocol', type:'text', ctrlAttr: { list: 'protolist' }, ctrlCss: { width: '100%'} },
+            { name: 'Action', display: 'Action', type: 'select', ctrlOptions: { 0: 'Allow', 1: 'Deny' }, ctrlCss: { width: '100%'} },
+            { name: 'Disabled', display: 'Disable', type: 'checkbox' },
+            ],
+
+         initData: [
+         
+         ]
+    }).css('width', '100%');
+});
+
+</script>
+              <p>This Page allows addition and removal of user defined 
+Firewall rules. Firewall rules can either govern traffic coming into the
+ gateway from the internet ("Input" rules) or traffic leaving devices 
+connected to the gateway and destined out ("Output" rules). The rules 
+can be "Allow" or "Deny", which either permit or deny specific traffic 
+to flow through the gateway.  Note that this page allows you to create 
+packet filters to devices on the LAN or the Additional Network but not 
+pinholes to NATed clients.  To create pinholes, you must go to the 
+Settings -&gt; Firewall -&gt; Applications, Pinholes and DMZ page.</p>
+              <p>To create a new rule, click on the '+' symbol on the 
+bottom left of the dialog. This adds a new empty rule. Start by choosing
+ whether it is an input or output rule.  You must specify the source and
+ destination IP addresses (IPv4 or IPv6 address).  In order to do this 
+you can enter an IP address (e.g. 10.37.42.0/24) or use the dropdown to 
+select one of the machines on the local LAN or choose "Any IPv4 
+address," or "Any IPv6 address" 
+(excluding DMZ+ and pinhole assigned addresses).You may then specify the
+ protocol, destination port range and action ("Allow" or "Deny").</p>
+              <p>Protocol can be entered by number or by name. If 
+entered by number it must be in the range of 1 to 143 inclusive. If 
+entered by name, it must be one of "all" (or "any"), "ip", "icmp", 
+"igmp", "ggp", "ipencap", "st", "tcp", "egp", "pup", "udp", "hmp", 
+"xns-idp", "rdp", "iso-tp4", "xtp", "ddp", "idpr-cmtp", "ipv6", "esp", 
+"ah", "rspf", "vmtp", "ospf", "ipip", "encap", "sctp", or "udplite".</p>
+              <p>Destination port range is optional (no source port 
+range restriction applies). The left field is used to select the 
+starting destination port range and the right field is used to select 
+the ending destination port range.</p>
+              <p>Port specification is meaningful only for TCP and UDP protocols.</p>
+              <p>To add a rule, click on the Plus icon below the rules.</p>
+              <p>To delete a rule, click on the Delete on right side of a rule and then click on the Save Button at the bottom of the rules.</p>
+              <p>To modify a rule, change the values on an existing 
+line, or alter the location of the rule in the rule set using the Up and
+ Down buttons on the right of the entry, and click on the Save Button at
+ the bottom of the rules.</p>
+              <p>Rules can be disabled such that they remain in the page
+ but are not applied to traffic on the device.  Use the "Disable" 
+checkbox to do this.</p>
+              <p>Rules found to have invalid data will have the invalid data replaced with "###".</p>
+              <form action="xslt?PAGE=C_3_3_POST&amp;NEXTPAGE=C_3_3_POST" method="post">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <datalist id="dlNodes">
+                  <option value="eevee">eevee</option>
+                  <option value="OnePlus5">OnePlus5</option>
+                  <option value="0/0">Any IPv4 address</option>
+                  <option value="::/0">Any IPv6 address</option>
+                </datalist>
+                <datalist id="mlNodes">
+                  <option value="e8:b1:fc:f6:96:ff">e8:b1:fc:f6:96:ff</option>
+                  <option value="94:65:2d:81:5d:3e">94:65:2d:81:5d:3e</option>
+                </datalist>
+                <datalist id="protolist">
+                  <option value="TCP">TCP</option>
+                  <option value="UDP">UDP</option>
+                  <option value="ICMP">ICMP</option>
+                </datalist>
+                <table id="tblUserFilters" class="centerdata tblUserFilters appendGrid ui-widget" style="width: 100%;"><thead class="ui-widget-header"><tr><td id="tblUserFilters_caption_td" class="ui-state-active caption" colspan="8">Firewall Rules</td></tr><tr><td id="tblUserFilters_Direction_td_head" class="ui-widget-header">Type</td><td id="tblUserFilters_Source_td_head" class="ui-widget-header">Source</td><td id="tblUserFilters_Destination_td_head" class="ui-widget-header">Destination</td><td id="tblUserFilters_Range_td_head" class="ui-widget-header">Port Range</td><td id="tblUserFilters_Protocol_td_head" class="ui-widget-header">Protocol</td><td id="tblUserFilters_Action_td_head" class="ui-widget-header">Action</td><td id="tblUserFilters_Disabled_td_head" class="ui-widget-header">Disable</td><td class="ui-widget-header"></td></tr></thead><tbody class="ui-widget-content"><tr class="empty"><td colspan="8">This Grid Is Empty</td></tr></tbody><tfoot class="ui-widget-header"><tr><td id="tblUserFilters_footer_td" colspan="8"><input type="hidden" id="tblUserFilters_rowOrder" name="tblUserFilters_rowOrder"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only append" role="button" title="Append Row"><span class="ui-button-icon-primary ui-icon ui-icon-plusthick"></span><span class="ui-button-text"></span></button></td></tr></tfoot></table>
+                <p align="left">
+                  <input type="submit" class="button" value="Save ">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

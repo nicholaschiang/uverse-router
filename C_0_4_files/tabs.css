@@ -1,0 +1,185 @@
+#main {
+	border: 1px solid #666;
+	clear: both;
+	background: #c1c1c1;
+}
+
+a img{
+	border: none;
+}
+
+#innercontainer {
+	border: 1px solid #666;	
+	margin: 0px 10px 10px 10px;
+}
+
+#contents {
+	padding: 9px 18px 18px 18px;
+	background: #ffffff;
+	min-height: 300px;
+}
+
+#header {
+	position: relative;
+	width: 100%;
+	height: 3em;
+	width: 50em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header2 {
+	position: relative;
+	width: 100%;
+	height: 3em;
+	width: 57em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+	margin: 0px 0px 0px 10px;
+}
+
+/* Starting Primary navigation section */
+
+#header ul#primary {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: -1px;
+	width: 50em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header ul#primary li  {
+	display: inline;
+	list-style: none;
+}
+
+#header ul#primary a,#header ul#primary span,#header ul#primary a.current {
+
+	display: block;
+	float: left;
+	padding: 4px 16px;
+	margin: 1px 2px 0 0;
+	text-align: center;
+	font-family: Georgia, serif;
+	font-size: 120%;
+	text-decoration: none;
+	color: #333;
+}
+
+#header ul#primary span,#header ul#primary a.current,#header ul#primary a.current:hover {
+	border: 1px solid #666;
+	border-bottom: none;
+	background: #c1c1c1;
+	padding-bottom: 6px;
+	margin-top: 0;
+}
+
+#header ul#primary a {
+	background: #ffffff;
+	border: 1px solid #AAA;
+	border-bottom: none;
+}
+
+#header ul#primary a:hover {
+	margin-top: 0;
+	border-color: #666;
+	background: #e2e2e2;
+	padding-bottom: 5px;
+}
+
+/* Ending Primary navigation section */
+
+/*Starting secondary nav section */
+
+#header2 ul#secondary {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: -1px; /*making it stick to the bottom of the div */
+	width: 57em; /* a width is required for Opera, older Mozilla browsers, and Konqueror browsers */
+}
+
+#header2 ul#secondary li  {
+	display: inline;
+	list-style: none;
+	white-space: nowrap;
+}
+
+#header2 ul#secondary a,#header2 ul#secondary span,#header2 ul#secondary a.current {
+	display: block;
+	float: left;
+	padding: 4px 12px;
+	margin: 1px 2px 0 0;
+	text-align: center;
+	font-size: 100%;
+	text-decoration: none;
+	font-weight: bold;
+	color: #333;
+}
+
+#header2 ul#secondary span,#header2 ul#secondary a.current,#header2 ul#secondary a.current:hover {
+	border: 1px solid #666;
+	border-bottom: none;
+	background: #ffffff;
+	margin-top: 0;
+padding-bottom: 6px;	
+}
+
+#header2 ul#secondary a {
+	background: #c1c1c1;
+	border-bottom: none;
+}
+
+#header2 ul#secondary a:hover {
+	background: #e2e2e2;
+}
+
+/*ending secondary nav section */
+
+/* Starting tertiary nav section */
+
+#header3 {
+	background: #EEE;
+}
+
+#header3 ul#tertiary {
+	margin: 10px;
+	padding: 10px 0px 10px 0px;
+}
+
+#header3 ul#tertiary li{
+	padding-left: 10px;
+	display: inline;
+	list-style-type: none;
+}
+
+#header3 ul#tertiary li a{
+	text-decoration: none;
+	color: #333;	
+}
+
+#header3 ul#tertiary span a{
+	color: #0c2577;
+	font-size: 100%;
+	padding-bottom: 3px;
+  border-bottom: 2px solid #0c2577;
+}
+
+.iconbartable {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.iconbartable h3{
+  font-size: 100%;
+  margin: 0px;
+}
+
+.iconbardata td{
+  font-size: 110%;
+}
+
+.iconbartable p.large {
+  font-size: 110%;
+}
+
+.iconbartable p.small {
+  font-size: 90%;
+}

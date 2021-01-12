@@ -1,0 +1,324 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>LAN DHCP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_3_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_3_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_3_files/error.css">
+    <style type="text/css">
+          .form-group label.tablesidebold { width: 13em; }
+          .form-group .deep-indent label { margin-left: 15em; width: 11em; }
+        </style>
+    <script type="text/javascript" src="C_2_3_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_2_3_files/jquery-1.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+          function enableNotification() {
+            if ( $("[name=IP_RANGE]")[0].checked ) {
+              $(".ip-label").removeClass("required");
+            } else if ( $("[name=IP_RANGE]")[1].checked ) {
+               $(".ip-label").removeClass("required");
+                 
+            }
+	    else if ($("[name=IP_RANGE]")[2].checked )
+	    {
+		$(".ip-label").addClass("required");
+		$("#IPADDR").focus();
+	    }
+          } 
+
+          $(document).ready( function() {
+            $("[name=IP_RANGE]").on('click', enableNotification);
+            enableNotification();
+          });
+        </script>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_2_3', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript">
+          var fieldNameList = [];
+
+
+
+          
+
+
+          markFieldErrors(fieldNameList);
+
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_2_3_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <span>LAN</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_0">Status</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_1">Wi-Fi</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_2">Wired Interfaces</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_2_3">DHCP</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_4">LAN IP Address Allocation</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_5">Statistics</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_6">IPv6</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="warning">
+                <div class="warning-icon">
+                  <img src="C_2_3_files/icon_warning.gif" alt="warning">
+                </div>
+                <div class="warning-text"><b>Warning </b>Modifying the settings on this page can impact the ability of devices to access your private network.</div>
+              </div>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_2_3_POST&amp;NEXTPAGE=C_2_3_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_2_3">
+                <fieldset class="stealth">
+                  <legend class="caplegh2">
+                    <h2>DHCP Configuration</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label class="tablesidebold left-floater">DHCP Network Range</label>
+                    <div style="margin-left:13em;">If you change the IP address range, you must renew the DHCP lease for all devices on the network.</div>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <span>
+                      <input type="radio" id="IP_RANGE_CLASSC" name="IP_RANGE" value="CLASSC" checked="checked">
+                      <label for="IP_RANGE_CLASSC">192.168.1.0 / 255.255.255.0 (default)</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <span>
+                      <input type="radio" id="IP_RANGE_CLASSB" name="IP_RANGE" value="CLASSB">
+                      <label for="IP_RANGE_CLASSB">172.16.0.0 / 255.255.0.0</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <span>
+                      <input type="radio" id="IP_RANGE_USER" name="IP_RANGE" value="USER">
+                      <label for="IP_RANGE_USER">Configure manually</label>
+                    </span>
+                  </div>
+                  <div class="form-group-3">
+                    <div class="col-a" style="width:13em"></div>
+                    <div class="col-b" style="width:30em">Note: Use 
+address and mask format - xxx.xxx.xxx.xxx, where xxx represents the 
+number (0-255).Also, Router address, first and last DHCP address should 
+not start with number 10.</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="deep-indent">
+                      <div class="form-group">
+                        <label for="IPADDR">Router Address</label>
+                        <span>
+                          <input type="text" id="IPADDR" name="IPADDR" size="20" maxlength="25">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="IPNETMASK">Subnet Mask</label>
+                        <span>
+                          <input type="text" id="IPNETMASK" name="IPNETMASK" size="20" maxlength="25">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="DHCPSADDR" class="ip-label">First DHCP Address</label>
+                        <span>
+                          <input type="text" id="DHCPSADDR" name="DHCPSADDR" size="20" maxlength="25" class="textmono">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="DHCPEADDR" class="ip-label">Last DHCP Address</label>
+                        <span>
+                          <input type="text" id="DHCPEADDR" name="DHCPEADDR" size="20" maxlength="25" class="textmono">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="DHCPLEASE" class="tablesidebold left-floater">DHCP Lease Time</label>
+                    <span><input type="text" id="DHCPLEASE" name="DHCPLEASE" size="3" maxlength="3" style="margin-right:1em" value="24">hours (24 hours default)</span>
+                  </div>
+                </fieldset>
+                <h2>Select Default Address Allocation Pool for the DHCP Server</h2>
+                <div class="form-group">Warning: This selection modifies
+ the default LAN network used by the DHCP server for address assignments
+ to new devices.  The default setting is Private Network.  Change it 
+only to Public Network when you want every new device getting a public 
+address assigned.  The recommendation is Private Network.  You can 
+change the setting for each individual on the 'IP Address Allocation' 
+page.</div>
+                <div class="form-group">
+                  <label for="DHCP_DEFAULT" class="tablesidebold left-floater">New Device DHCP Pool</label>
+                  <span>
+                    <select id="DHCP_DEFAULT" name="DHCP_DEFAULT">
+                      <option value="PRIVATE_NETWORK" selected="selected">Private Network</option>
+                    </select>
+                  </span>
+                </div>
+                <fieldset class="stealth">
+                  <legend class="caplegh2">
+                    <h2>Guest DHCP Configuration</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label class="tablesidebold left-floater">DHCP Network Range</label>
+                    <div style="margin-left:13em;">If you change the IP address range, you must renew the DHCP lease for all devices on the network.</div>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <span>
+                      <input type="radio" id="GUEST_IP_RANGE_CLASSC" name="GUEST_IP_RANGE" value="CLASSC" checked="checked">
+                      <label for="GUEST_IP_RANGE_CLASSC">172.27.0.0 / 255.255.255.0 (default)</label>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>&nbsp;</label>
+                    <span>
+                      <input type="radio" id="GUEST_IP_RANGE_USER" name="GUEST_IP_RANGE" value="USER">
+                      <label for="GUEST_IP_RANGE_USER">Configure manually</label>
+                    </span>
+                  </div>
+                  <div class="form-group-3">
+                    <div class="col-a" style="width:13em"></div>
+                    <div class="col-b" style="width:30em">Note: Use 
+address and mask format - xxx.xxx.xxx.xxx, where xxx represents the 
+number (0-255).Also, Router address, first and last DHCP address should 
+not start with number 10.</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="deep-indent">
+                      <div class="form-group">
+                        <label for="GUEST_IPADDR">Router Address</label>
+                        <span>
+                          <input type="text" id="GUEST_IPADDR" name="GUEST_IPADDR" size="20" maxlength="25">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="GUEST_IPNETMASK">Subnet Mask</label>
+                        <span>
+                          <input type="text" id="GUEST_IPNETMASK" name="GUEST_IPNETMASK" size="20" maxlength="25">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="GUEST_DHCPSADDR" class="ip-label">First DHCP Address</label>
+                        <span>
+                          <input type="text" id="GUEST_DHCPSADDR" name="GUEST_DHCPSADDR" size="20" maxlength="25" class="textmono">
+                        </span>
+                      </div>
+                      <div class="form-group">
+                        <label for="GUEST_DHCPEADDR" class="ip-label">Last DHCP Address</label>
+                        <span>
+                          <input type="text" id="GUEST_DHCPEADDR" name="GUEST_DHCPEADDR" size="20" maxlength="25" class="textmono">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="GUEST_DHCPLEASE" class="tablesidebold left-floater">DHCP Lease Time</label>
+                    <span><input type="text" id="GUEST_DHCPLEASE" name="GUEST_DHCPLEASE" size="3" maxlength="3" style="margin-right:1em">hours (24 hours default)</span>
+                  </div>
+                </fieldset>
+                <h2>DHCP6 Configuration</h2>
+                <div class="form-group"><label for="IN_PD" class="tablesidebold left-floater">Prefix Delegation</label><input type="checkbox" id="IN_PD" name="IN_PD" value="1" checked="checked">Enabled</div>
+                <div class="form-group"><label for="IN_NA" class="tablesidebold left-floater">Address Assignment</label><input type="checkbox" id="IN_NA" name="IN_NA" value="1" checked="checked">Enabled</div>
+                <p align="right">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

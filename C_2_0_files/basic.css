@@ -1,0 +1,542 @@
+/* 2Wire GUI stylesheet */
+
+/* General page styles */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html { 
+	margin: 0;
+	padding: 0
+}
+
+
+body, div, td, th, h2, h3, h4 { /* redundant rules for bad browsers  */  
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Lucida, Verdana, Helvetica, sans-serif;
+	voice-family: inherit;
+	font-size: small;
+	color: #333;
+}  
+
+body {
+	background: #ffffff;
+	color: #333;
+	padding: 1em 20px 3em 20px;
+	margin: 0;
+}
+
+body {
+  text-align: center;
+}
+
+/* Skip nav link */
+
+div.skip-nav-link a,
+div.skip-nav-link a:hover,
+div.skip-nav-link a:visited {
+  position: absolute;
+  left: 0;
+  top: -200px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+div.skip-nav-link a:active,
+div.skip-nav-link a:focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+}
+
+/* Div specific styles */
+
+#container {
+  margin: 0 auto;
+  width: 58em;
+  text-align: left;
+  }
+
+#logo_globe {
+  height: 30px;
+  background: url(/images/att_logo_globe.jpg) no-repeat left top;
+  margin: 10px 0 10px 0;
+}
+
+#logo_globe_only {
+  height: 36px;
+  background: url(/images/att_globe_logo.png) no-repeat left top;
+  margin: 10px 0 10px 0;
+}
+/* Header styles */
+
+h1,h2 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	color: #333;
+}
+
+h1 {
+	font-size: 170%;
+	margin: 0;
+}
+
+h1 a { text-decoration: none; color: #333; }
+h1 a:hover { border-bottom: 1px dotted #666; color: #000; }
+
+h2 {
+	font-size: 130%;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #CCC;
+	margin: 30px 0 10px 0;
+}
+
+h3 {
+	font-size: 110%;
+}
+
+/*  Link styles */
+
+a { color: #0c2577; }    
+a:hover { color: #333; }
+a:active { color: #000; }
+
+/* Paragraph styles */
+
+p { line-height: 140%; }
+
+p.note {
+	background: #EEE;
+	padding: 4px;
+	font-family: tahoma,sans-serif;
+	font-size: 85%;
+	line-height: 130%;
+	margin-top: 0;
+}
+
+/* Warning with icon */
+div.warning, div.imagetext {
+	margin-bottom: 1em;
+	min-width: 59em;
+	vertical-align: top;
+}
+div.warning-icon, div.imagetext_image {
+        display: inline-block;
+        width: 6em;
+}
+div.warning-text, div.imagetext_text {
+        display: inline-block;
+        vertical-align: top;
+        width: 44em;
+}
+
+p.warning {
+  padding: 0 0 32px 60px; /* setting up padding so that the entire icon shows */
+  background: transparent url('/icons/icon_warning.gif') left top no-repeat;
+}
+
+p.warningred {
+	color: #b30a3c;
+}
+
+/* Table styles */
+
+table.centerdata td {
+  text-align: center;
+}
+
+table.centerdata td.rowlabel {
+  text-align: left;
+}
+
+table.coloredtable {
+  border: 1px solid #aaa;
+}
+
+table.coloredtable th {
+  background-color: #ccc;
+}
+
+table.bottomborder,div.bottomborder {
+   border-bottom: 1px solid #CCC;
+}
+
+.bottomborder h2 {
+  text-align: left;
+  border-bottom: medium none;
+  padding-bottom: 0;
+  margin: 30px 0 1px;
+}
+
+th {
+  text-align: center;
+  background-color: #efefef;
+}
+
+td {
+  padding: 0.2em;
+}
+
+td.tablesidebold, .form-group .tablesidebold {
+	font-weight: bold;
+	white-space: nowrap;
+  padding-right: 30px;
+}
+
+.form-group .tablesidebold { padding-right: 0; }
+
+td.tablesidelabel {
+  font-weight: bold;
+  white-space: nowrap;
+  width: 170px;
+}
+
+td.indent, label.indent {
+	padding-left: 40px;
+}
+
+tr.odd {
+  background-color: #efefef;
+}
+
+th.width12em {
+	min-width:12em;
+}
+
+th.width14em {
+	min-width:14em;
+}
+
+th.width16em {
+	min-width:16em;
+}
+
+th.rowlabel {
+  text-align: left;
+  background-color: white;
+}
+
+table.evencolortable tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+tr.even {
+  /*  Currently clearing this out, so that it displays the background color */
+}
+
+/*  Table cell highlights */
+.highlight1 { background: #fcb314; }
+.highlight2 { background: #feffcd; }
+
+.colorblue { color: #0c2577; }
+.colorred { color: #b30a3c; }
+.colorgreen { color: #006501; }
+.colororange { color:#c15500; }
+
+/* Styling the hr tag */
+hr {
+	border: none 0;
+	border-top: 1px dashed #CCC;/*the border*/
+	width: 100%;
+	height: 1px;/*whatever the total width of the border-top and border-bottom equal*/
+}
+
+/* List styles */
+ul li h4 {
+  margin-bottom: 10px;
+}
+
+ul li h3 {
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Styling the classes */
+
+.leftcontent {
+	width: 60%;
+	float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.rightcontent {
+	width: 30%;
+	float: right;
+}
+
+.leftcolumn {
+  width: 45%;
+  float: left;
+}
+
+.rightcolumn {
+  width: 45%;
+  float:right;
+}
+
+.clearend {
+	clear:both;
+}
+
+input.rightbutton {
+	display:inline;
+	float:right;
+  margin-top: -23px;
+}
+
+input.disableop {
+	color: #666666
+}
+
+select.disableop {
+        color: #666666
+}
+
+img.centerimg {
+	vertical-align: middle;
+}
+
+.middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+a img {
+  border: none;
+}
+
+/* Setting up the sidebox */
+.sidebox {
+	margin-bottom: 30px;
+	border: 1px solid #ccc;
+}
+
+/* Setting up the sidebox header */
+div.sidebox h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 140%;
+  margin-top: 0;
+  padding: 10px 20px;
+}
+
+/* Setting up the sidebox paragraphs */
+div.sidebox p {
+	margin: 5px;
+}
+
+/* Setting up the quickservice list */
+ul.quickservice {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+}
+
+ul.quickservice li img{
+  padding:5px;
+}
+
+/* Setting up the fake buttons from list */
+ul.buttonlist {
+  margin-left: 0;
+  padding-left: 0;
+  white-space: nowrap;
+}
+
+ul.buttonlist li {
+  display: inline;
+  list-style-type: none;
+}
+
+ul.buttonlist a { padding: 3px 10px; }
+
+ul.buttonlist a:link, ul.buttonlist a:visited
+{
+  color: #555;
+  background-color: #ccc;
+  text-decoration: none;
+}
+
+ul.buttonlist a:hover
+{
+  color: #fff;
+  background-color: #aaa;
+  text-decoration: none;
+}
+
+ul.buttonlist span {
+  padding: 3px;
+  color: #fff;
+  background-color: #aaa;
+  text-decoration: none;
+}
+
+/* Setting up the fake buttons from hrefs */
+.fakebutton {
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+
+.fakebutton a {
+	padding: 4px;
+	text-decoration: none;
+	display: inline;
+	color: #000000;
+	background-color: #f0f0f0;
+  border: 2px solid #ffffff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+}
+
+.fakebutton a:active {
+	background-color: #f0f0f0;
+  border: 2px solid #848484;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.clearhack { display: inline; } /*Clears Box Model Hack in IE5*/
+
+/* Error and Success message styling */
+
+#errorlist {
+  border: 2px solid #b30a3c;
+	padding: 10px;
+}
+
+#errorlist h3 {
+  font-size: 18px;
+  padding-left: 20px;
+  background: transparent url('/images/exclamation.gif') left no-repeat;
+  margin-top: 0;
+}
+
+#successlist {
+  border: 2px solid #4ca90c;
+	padding: 10px;
+}
+
+#successlist h3{
+  font-size: 18px;
+  padding-left: 20px;
+  background: transparent url('/images/info.gif') left no-repeat;
+  margin-top: 0;
+}
+
+#userprofile li{
+ margin-bottom: 0;
+}
+
+/*  Show and Hide Sibling styling */
+/*  Make sure to keep the .shrinker style above the .showsibling style, so that the cascade works properly on replacement. */
+
+.shrinker { background: url(/images/arrow_up_gray.gif) no-repeat right center; }
+.showsibling { background: url(/images/arrow_down_gray.gif) no-repeat right center; }
+
+fieldset.stealth { margin: 0; padding: 0; border-width: 0; }
+
+legend { padding: 0; }
+
+.caplegh2 {
+  font-family: Geoddrgia, serif;
+  font-weight: normal;
+  font-size: 100%;
+  width: 100%;
+}
+
+.stealth2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 130%;
+  width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #CCC;
+  margin: 30px 0 10px 0;
+}
+
+.stealth3 {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 120%;
+  margin: 20px 0 5px 0;
+}
+
+.stealth4 {
+  font-weight: bold;
+  font-size: 110%;
+  margin: 15px 0 5px 0;
+}
+
+.stealth5 {
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.form-group { margin-bottom: 0.5em; }
+.form-group label:first-child { display: inline-block; width: 12em; }
+
+#settings-service-notifications .form-group label:first-child { width: 18em; }
+#broadband-link-configuration-form .form-group label:first-child { width: 14em; }
+
+.right-floater { float: right; }
+.left-floater { float: left; }
+
+.right-aligner { text-align: right; }
+.left-aligner { text-align: left; }
+.center-aligner { text-align: center; }
+
+label.error {
+  font-size: 0.85em;
+  font-style: normal;
+  color: maroon;
+  background-color: #ffc;
+  padding: 0 1em;
+  border-radius: 1em;
+}
+
+input.error { background-color: #ffc; border-color: maroon; }
+
+label.required { font-weight: bold; }
+.disabled-block label.required { font-weight: normal; }
+
+
+a.button:link, a.button:visited, a.button:hover, a.button:active
+{
+  text-decoration: none;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+/* Multi column form items */
+.form-group-2, .form-group-3, .form-group-4 { 
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  width: 100%; 
+}
+.col-a, .col-b, .col-c, .col-d {
+  display: inline-block; 
+}
+.col-a { width: 35%; }
+.col-b { width: 40%; }
+.col-a img {
+  vertical-align: middle;
+  margin-right: 1em;
+}
+.col-a.indent-0 { padding-left: 2.5em; }
+.col-a.indent-1 { padding-left: 4.75em; }
+.col-a.indent-2 { padding-left: 6.5em; }
+.col-a.textbold { font-weight: bold; }

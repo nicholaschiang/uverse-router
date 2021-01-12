@@ -1,0 +1,452 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Wi-Fi configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_1_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_1_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_2_1_files/error.css">
+    <style type="text/css">
+          .form-group { overflow: hidden; }
+
+          .form-group .col-1 { float: left; width: 30%; }
+          .form-group .col-2 { float: left; width: 40%; }
+          .form-group .col-3 { float: left;  }
+
+          .form-group .col-1-and-2 { float: left; width: 70%; }
+          .form-group .col-2-and-3 { float: left; }
+
+          .form-group .indent-2 { margin-left: 30%; }
+
+          .form-group .col-1 label { width: 14em;}
+          .form-group .col-2 label { width: auto; }
+
+          h3 { font-family: Georgia, serif; font-size: 1.25em; }
+        </style>
+    <script type="text/javascript" src="C_2_1_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_2_1_files/jquery-1.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['WPS', 'WIFIWPS', 'GETSTATUS', 'WPS', 'OK', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['WPS', 'WIFIWPS', 'GETSTATUS', 'WPS', 'OK', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['WPS', 'WIFIWPS', 'GETSTATUS', 'WPS', 'OK', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_SERVICE', 'MODNAME', 'INVALID', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'DEVICE', 'GET', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'WIFI', 'GETAP', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'DEVICE', 'GET', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'WIFI', 'GETAP', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'DEVICE', 'GET_WIFI_PARAMS', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['DEVNAME', 'DEVICE', 'GET_WIFI_PARAMS', 'DEVNAME', 'NO_ENT', 'C_2_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript">
+
+          var fieldNameList = [];
+
+          
+
+          markFieldErrors(fieldNameList);
+
+          $(function(){
+
+            $(':text').keypress(function(event){
+              if (event.which === 13) {
+                event.preventDefault();
+                return false;
+              }
+            });
+
+          });
+
+        </script>
+    <script type="text/javascript">
+          function enablePassword() {
+            if ( $("[name=DEFAULT_KEY_WL0_USER]")[0].checked ) {
+              $(".pwd-label").removeClass("required");
+            } else {
+               $(".pwd-label").addClass("required");
+               $("#USER_KEY").focus();
+            }
+          }
+
+          $(document).ready( function() {
+            $("[name=DEFAULT_KEY_WL0_USER]").on('click', enablePassword);
+            enablePassword();
+          });
+          </script>
+    <script type="text/javascript">
+          (function ($) {
+              $.toggleShowPassword = function (options) {
+                  $(options.control).bind('click', function () {
+                      if ($(options.control).is(':checked')) {
+                          $(options.field).attr('type', 'text');
+                      } else {
+                          $(options.field).attr('type', 'password');
+                      }
+                  })
+              };
+          }(jQuery));
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_2_1_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <span>LAN</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_0">Status</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_2_1">Wi-Fi</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_2">Wired Interfaces</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_3">DHCP</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_4">LAN IP Address Allocation</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_5">Statistics</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_6">IPv6</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="warning">
+                <div class="warning-icon">
+                  <img src="C_2_1_files/icon_warning.gif" alt="warning">
+                </div>
+                <div class="warning-text">
+                  <p><b>Warning: &nbsp;</b>Modifying the settings on this page can impact the ability of devices to access your wireless network.</p>
+                </div>
+              </div>
+              <form name="pagepost" method="post" action="/xslt?PAGE=C_2_1_POST&amp;NEXTPAGE=C_2_1_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_2_1">
+                <input type="hidden" name="NETCOM_CLASS" value="gateway">
+                <input type="hidden" name="RADIO_WL0_STATE" value="1">
+                <input type="hidden" name="RADIO_WIFI0_STATE" value="1">
+                <input type="hidden" name="SSID_WL0_STATE" value="1">
+                <input type="hidden" name="SSID_WIFI0_STATE" value="1">
+                <input type="hidden" name="WL0_GUEST_SECURITY" value="1">
+                <input type="hidden" name="WPS_STATUS_WL0" value="1">
+                <input type="hidden" name="WPS_STATUS_WIFI0" value="1">
+                <h2>Wi-Fi Radio Configuration</h2>
+                <p> To configure options not displayed on this page, click on the "Advanced Options" link below.</p>
+                <div class="form-group">
+                  <div class="col-1">
+                    <a href="http://192.168.1.254/xslt?PAGE=C_2_1c">Advanced Options</a>
+                  </div>
+                </div>
+                <fieldset class="stealth">
+                  <legend class="stealth4">User Network</legend>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="ENABLED_WL0_PRIMARY">Enable</label>
+                    </div>
+                    <div class="col-2">
+                      <select id="ENABLED_WL0_PRIMARY" name="ENABLED_WL0_PRIMARY">
+                        <option value="ENABLE" selected="selected">Enabled</option>
+                        <option value="DISABLE" disabled="disabled">Disabled</option>
+                      </select>
+                    </div>
+                    <div class="col-3">Default:
+                            Enabled</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="ESSID_WL0_USER">Network Name (SSID)</label>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" id="ESSID_WL0_USER" name="ESSID_WL0_USER" size="20" maxlength="32" value="Dadda">
+                    </div>
+                    <div class="col-3">Default:
+                            ATT5PEs6Fb</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label>Wi-Fi Password</label>
+                    </div>
+                    <div class="col-2-and-3">
+                      <input type="radio" id="DEFAULT_KEY_WL0_USER_1" name="DEFAULT_KEY_WL0_USER" value="1">
+                      <label for="DEFAULT_KEY_WL0_USER_1">Use default Wi-Fi Network Password</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2-and-3" style="padding-left:2em">(as printed on the System Label, see figure at page bottom)</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2-and-3">
+                      <input type="radio" id="KEY_WL_USER" name="DEFAULT_KEY_WL0_USER" value="0" checked="checked">
+                      <label for="KEY_WL_USER" style="margin-right:1em">Use custom Wi-Fi Network Password</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2-and-3" style="padding-left:2em">
+                      <label for="USER_KEY" class="pwd-label required">Enter password</label>
+                      <input type="text" id="USER_KEY" name="CUSTOM_KEY_WL0_USER" maxlength="64" autocomplete="off" value="-fN%GU+F`n9MU~4kJqmS" title="Custom key">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2-and-3" style="padding-left:16.5em">Note:
+ TKIP (WPA-PSK) &amp; AES-CCMP (WPA2-PSK) require either 64 hexadecimal 
+characters or an ASCII “pass phrase” between 8 and 63 alphanumeric 
+characters.</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label>Wi-Fi Protected Setup</label>
+                    </div>
+                    <div class="col-2 tablesidebold">Status:
+                            idle</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2">
+                      <select name="WPS_ENABLED_WL0" id="WPS_ENABLED_WL0">
+                        <option value="TRUE" selected="selected">Enabled</option>
+                        <option value="FALSE">Disabled</option>
+                      </select>
+                    </div>
+                    <div class="col-3">
+                      <label for="WPS_ENABLED_WL0">Default:
+                                      Enabled</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2">
+                      <label for="DEV_PIN1">Enter WPS PIN </label>
+                      <input type="text" id="DEV_PIN1" size="15" name="DEV_PIN">
+                      <input type="hidden" id="DEVICE_PIN1" value="wl0">
+                    </div>
+                    <div class="col-3">
+                      <input type="submit" class="button" name="SUBMIT_PIN_WL0" value="Use PIN">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2">Push WPS Button Remotely</div>
+                    <div class="col-3">
+                      <input type="hidden" id="DEVICE_WL0" value="wl0">
+                      <input type="submit" class="button" name="SUBMIT_PUSH_BUTTON_WL0" value="Push button">
+                      <img src="C_2_1_files/icon-wps.png" alt="WPS">
+                    </div>
+                  </div>
+                </fieldset>
+                <input type="hidden" name="WPS_STATUS_WL0_1" value="0">
+                <fieldset class="stealth">
+                  <legend class="stealth4">Guest Network</legend>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="ENABLED_WL0_GUEST">Enable</label>
+                    </div>
+                    <div class="col-2">
+                      <select id="ENABLED_WL0_GUEST" name="ENABLED_WL0_GUEST">
+                        <option value="ENABLE">Enabled</option>
+                        <option value="DISABLE" selected="selected">Disabled</option>
+                      </select>
+                    </div>
+                    <div class="col-3">Default:
+                              Disabled</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="ESSID_WL0_GUEST">Network Name (SSID)</label>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" id="ESSID_WL0_GUEST" name="ESSID_WL0_GUEST" size="20" maxlength="32" value="ATT5PEs6Fb_guest">
+                    </div>
+                    <div class="col-3">Default:
+                              ATT5PEs6Fb_guest</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="ESSID_GUEST_JOIN_DEFAULT_LAN">Private LAN</label>
+                    </div>
+                    <div class="col-2">
+                      <select id="ESSID_GUEST_JOIN_DEFAULT_LAN" name="ESSID_GUEST_JOIN_DEFAULT_LAN">
+                        <option value="1" selected="selected">Enabled</option>
+                        <option value="0">Disabled</option>
+                      </select>
+                    </div>
+                    <div class="col-3">Default:
+                              Enabled</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label for="CUSTOM_KEY_GUEST">Wi-Fi Password</label>
+                    </div>
+                    <div class="col-2">Enter a password for the guest network, or disable security for this network.</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1">&nbsp;</div>
+                    <div class="col-2">
+                      <input type="text" id="CUSTOM_KEY_GUEST" name="CUSTOM_KEY_WL0_GUEST" maxlength="64" autocomplete="off">
+                    </div>
+                    <div class="col-1">&nbsp;</div>
+                  </div>
+                </fieldset>
+                <fieldset class="stealth">
+                  <legend class="stealth4">2.4 GHz Wi-Fi Radio Channel Selection</legend>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label>Current Wi-Fi Channel</label>
+                    </div>
+                    <div class="col-2">10 (20 MHz)</div>
+                    <div class="col-3">Default:
+                                Auto</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1-and-2">Check Wi-Fi Channel Availability</div>
+                    <div class="col-3">
+                      <input type="submit" class="button" name="RESCAN" value="Rescan">
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="stealth">
+                  <legend class="stealth4">5 GHz Wi-Fi Radio Channel Selection</legend>
+                  <div class="form-group">
+                    <div class="col-1">
+                      <label>Current Wi-Fi Channel</label>
+                    </div>
+                    <div class="col-2">153</div>
+                    <div class="col-3">Default:
+                                Auto</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-1-and-2">Check Wi-Fi Channel Availability</div>
+                    <div class="col-3">
+                      <input type="submit" class="button" name="RESCAN_5G" value="Rescan">
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="right-aligner">
+                  <input type="submit" class="button" name="SAVE" value="Save">
+                </div>
+                <h2>System Label Diagram</h2>
+                <div class="form-group">
+                  <img class="middle head-room" alt="system label" src="C_2_1_files/label_5268_01.png" longdesc="The serial number, wireless network key, and device access code are provided on a label, usually placed on the left side of the device towards the back of the box.">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

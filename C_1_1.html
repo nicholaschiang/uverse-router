@@ -1,0 +1,383 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Broadband link configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_1_1_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_1_1_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_1_1_files/error.css">
+    <script type="text/javascript" src="C_1_1_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_1_1_files/jquery-1.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'MOD_PUB_GET', 'MODNAME', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_PVC', 'MODNAME', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_APVC', 'MODNAME', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['BONDED_STAT', 'STATS', 'DSL', 'BONDED_STAT', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_PPP', 'MODNAME', 'INVALID', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['MODNAME', 'PROV', 'GET_PPPOE', 'MODNAME', 'INVALID', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['STATUS', 'LM', 'GET', 'STATUS', 'LM_UP', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+      var vals = ['TYPE', 'NETWORK', 'GET', 'TYPE', 'NO_ENT', 'C_1_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript" src="C_1_1_files/C_1_1.js"></script>
+    <script>
+          var fieldNameList = [];
+
+          
+
+          markFieldErrors(fieldNameList);
+
+        </script>
+    <style>
+          div.indent { padding-left: 40px; }
+          label input[type="radio"] { margin-right: 0.75em; }
+        </style>
+    <script type="text/javascript">
+          function enableAddNetwork() {
+            if ( $("[name=SUPPLEMENTARY_NETWORK]")[0].checked ) {
+                 $(".addnet-label").removeClass("required");
+                 $(".addcas-label").removeClass("required");
+                 $(".router-label").removeClass("required");
+                 $(".router-name").removeClass("required");
+            } else if ( $("[name=SUPPLEMENTARY_NETWORK]")[1].checked ) {
+               $(".addnet-label").addClass("required");
+               $(".addcas-label").removeClass("required");
+               $(".router-label").removeClass("required");
+               $(".router-name").removeClass("required");
+               $("#ADD_ADDITIONAL_NETWORK").focus();
+             } else if ( $("[name=SUPPLEMENTARY_NETWORK]")[2].checked ) {
+               $(".addcas-label").addClass("required");
+               $(".addnet-label").removeClass("required");
+               if ( $("[name=CHOOSEROUTER]")[0].checked ) {
+                     $(".router-name").addClass("required");
+                } 
+                if ( $("[name=CHOOSEROUTER]")[1].checked ) {
+                    $(".router-label").addClass("required");
+                }  
+
+               $("#ADD_CASCADED_ROUTER").focus(); 
+             }
+          }
+          $(document).ready( function() {
+            $("[name=SUPPLEMENTARY_NETWORK]").on('click', enableAddNetwork);
+            enableAddNetwork();
+          });
+
+
+          function enableRouterAddress() {
+           if ( $("[name=CHOOSEROUTER]")[0].checked ) {
+                $(".router-label").removeClass("required");
+                $(".router-name").addClass("required");
+             } if ( $("[name=CHOOSEROUTER]")[1].checked ) {
+                $(".router-label").addClass("required");
+                $(".router-name").removeClass("required");
+                $("#ROUTER_IPADDR").focus();
+            }
+          }
+          $(document).ready( function() {
+            $("[name=CHOOSEROUTER]").on('click', enableRouterAddress);
+            enableRouterAddress();
+          });
+
+          function enableIPAddress() {
+            if ( $("[name=IP_DYNAMIC]")[0].checked ) {
+              $(".ip-label").removeClass("required");
+            } else {
+               $(".ip-label").addClass("required");
+                $("#BB_ADDR").focus();
+            }
+          }
+          $(document).ready( function() {
+            $("[name=IP_DYNAMIC]").on('click', enableIPAddress);
+
+                enableIPAddress();
+          });
+
+          $(document).ready( function() {
+                $('#BB_TYPE').change(function() {
+                var optionSelected = $("option:selected", this);
+                var valueSelected = this.value;
+                if(valueSelected=="PPPoE")
+                {
+                   $(".ppoe-label").addClass("required");
+                   $("#PPP_USER").focus();
+                }
+
+          });
+
+          });
+          function enableDNSAddress() {
+           if ( $("[name=DNS_DYNAMIC]")[0].checked ) {
+              $(".dns-label").removeClass("required");
+            } else {
+              $(".dns-label").addClass("required");
+              $("#IP_BBDNS1").focus();
+            }
+          }
+          $(document).ready( function() {
+            $("[name=DNS_DYNAMIC]").on('click', enableDNSAddress);
+            enableDNSAddress();
+          });
+
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_1_1_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <span>Broadband</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Status</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_1_1">Link Configuration</a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="warning">
+                <div class="warning-icon">
+                  <img src="C_1_1_files/icon_warning.gif" alt="warning">
+                </div>
+                <div class="warning-text"><b>Warning </b>Modifying the 
+settings on this page can impact the ability of devices on your private 
+network to access your broadband connection.  Modifications may also 
+affect broadband-enabled applications and services running on your 
+private network.</div>
+              </div>
+              <form name="pagepost" method="post" action="/xslt?PAGE=C_1_1_POST&amp;NEXTPAGE=C_1_1_POST" id="broadband-link-configuration-form">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_1_1">
+                <input type="hidden" name="CURR_BB_TYPE" value="DHCP">
+                <input type="hidden" name="PKGLOCK_UI" value="2">
+                <input type="hidden" name="DSL_ATM_UI" value="2">
+                <fieldset class="stealth">
+                  <legend class="caplegh2">
+                    <h2>Broadband Interface</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label for="BB_CLASS">Choose Interface type</label>
+                    <span>
+                      <select id="BB_CLASS" name="BB_CLASS">
+                        <option value="dsl0">DSL</option>
+                        <option value="eth4">Ethernet</option>
+                        <option value="auto" selected="selected">Automatic Ethernet/DSL</option>
+                      </select>
+                    </span>
+                  </div>
+                </fieldset>
+                <fieldset class="stealth">
+                  <legend class="caplegh2">
+                    <h2>Broadband IP Network</h2>
+                  </legend>
+                  <div class="form-group">
+                    <label for="IP_MTU">Upstream MTU</label>
+                    <span>
+                      <input type="text" id="IP_MTU" name="IP_MTU" size="4" value="1500">
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label for="IPV6_MTU">IPv6 Upstream MTU</label>
+                    <span>1500</span>
+                  </div>
+                </fieldset>
+                <br>
+                <fieldset id="supplementary-network" class="stealth">
+                  <legend class="caplegh2">
+                    <h2>Supplementary Network</h2>
+                  </legend>
+                  <p>To configure IP/subnet address manually, use format
+ - xxx.xxx.xxx.xxx, where xxx represents the number (0-255). Also, 
+router Address should not start with 10.</p>
+                  <div class="form-group">
+                    <input type="radio" id="SUPPLY_NETWORK_NONE" name="SUPPLEMENTARY_NETWORK" value="NONE" checked="checked">
+                    <label for="SUPPLY_NETWORK_NONE">None</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="radio" id="SUPPLY_NETWORK_ADD" name="SUPPLEMENTARY_NETWORK" value="ADDITIONAL_NETWORK">
+                    <label for="SUPPLY_NETWORK_ADD">Add Additional Network</label>
+                  </div>
+                  <div data-enabled-by="ADDITIONAL_NETWORK">
+                    <div class="form-group">
+                      <label for="PUBLIC_IPADDR" class="indent addnet-label">Router Address</label>
+                      <span>
+                        <input type="text" class="disableop" id="PUBLIC_IPADDR" name="PUBLIC_IPADDR" required="" disabled="disabled">
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label for="PUBLIC_IPNETMASK" class="indent addnet-label">Subnet Mask</label>
+                      <span>
+                        <input type="text" class="disableop" id="PUBLIC_IPNETMASK" name="PUBLIC_IPNETMASK" required="" disabled="disabled">
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label for="PUBLIC_FWOPEN_TRUE" class="indent">Auto Firewall Open</label>
+                      <span>
+                        <input type="checkbox" id="PUBLIC_FWOPEN_TRUE" name="PUBLIC_FWOPEN" value="TRUE" data-enabler-for=".enabler-target-cascaded-router" disabled="disabled">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="radio" class="disableop" id="ADD_CASCADED_ROUTER" name="SUPPLEMENTARY_NETWORK" value="CASCADED_ROUTER">
+                    <label for="ADD_CASCADED_ROUTER">Add Cascaded Router</label>
+                    <input type="hidden" name="CROUTEID" value="">
+                  </div>
+                  <div data-enabled-by="CASCADED_ROUTER">
+                    <div class="form-group">
+                      <label for="CR_IPADDR" class="indent addcas-label">Network Address</label>
+                      <span>
+                        <input type="text" class="disableop" id="CR_IPADDR" name="CR_IPADDR" required="" disabled="disabled">
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label for="CR_NETMASK" class="indent addcas-label">Subnet Mask</label>
+                      <span>
+                        <input type="text" class="disableop" id="CR_NETMASK" name="CR_NETMASK" required="" disabled="disabled">
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <div class="indent">
+                        <label style="width:25em">Choose the router that will host the secondary subnet</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="indent">
+                        <input type="radio" class="disableop" id="CHOOSE_ROUTER_NAME" name="CHOOSEROUTER" value="TRUE" disabled="disabled">
+                        <label for="CHOOSE_ROUTER_NAME">Select Router</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="indent">
+                        <label for="ROUTER" class="indent router-name" style="display:inline-block; width:11em">Router</label>
+                        <select name="ROUTER_NAME" id="ROUTER" class="disableop" disabled="disabled">
+                          <option selected="selected">eevee: 192.168.1.65</option>
+                          <option>OnePlus5: 192.168.1.67</option>
+                        </select>
+                      </div>
+                      <input type="hidden" name="DEV_NAME_IPADDR_SEPARATOR" value=": " disabled="disabled">
+                    </div>
+                    <div class="form-group">
+                      <div class="indent">
+                        <input type="radio" id="ROUTER_IP" name="CHOOSEROUTER" value="FALSE" disabled="disabled">
+                        <label for="ROUTER_IP">Enter Address</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="indent">
+                        <label for="ROUTER_IPADDR" class="indent router-label" style="display:inline-block; width:11em">IP Address</label>
+                        <input type="text" id="ROUTER_IPADDR" class="disableop" name="CR_IPADDR_ENTERED" disabled="disabled">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <p align="right">
+                  <input type="submit" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

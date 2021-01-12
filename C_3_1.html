@@ -1,0 +1,468 @@
+<!--?xml version="1.0"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <title>Firewall application, pinholes and DMZ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_1_files/basic.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_1_files/tabs.css">
+    <link rel="stylesheet" type="text/css" title="Main" href="C_3_1_files/error.css">
+    <style type="text/css">
+          [name="FWALLOW"] { margin-right: 0.5em; }
+          
+          .col-a { width: 17em; vertical-align: middle; }
+          .col-b { width: 14em; vertical-align: middle; }
+          .col-c { width: 6em; vertical-align: middle; }
+          .col-d { width: 14em; vertical-align: middle; }
+          
+          .greyboldcenter{
+            text-align: center;
+            background-color: #efefef;
+            font-weight: bold;
+          }
+        </style>
+    <script type="text/javascript" src="C_3_1_files/es5-shim.js"></script>
+    <script type="text/javascript" src="C_3_1_files/jquery-1.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('label[for]').each(function(){
+          if ($('#'+$(this).attr('for')).prop('required')) $(this).addClass('required');
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+
+    var errValues = ['CALLARG', 'MOD', 'CMD', 'WEBARG', 'CODE', 'PAGE', 'PAGE', 'VALUE'];
+
+    
+      var vals = ['MODNAME', 'PROV', 'GET_DSL', 'MODNAME', 'NO_ENT', 'C_3_1', '', ''];
+      //console.log(vals);
+      errValues.push( vals );
+    
+
+
+    function markFieldErrors( nameList ) {
+
+      $(document).ready( function() {
+        $.each( nameList, function(key, val) {
+          $("label[for='" + val + "']").addClass("field-error");
+        });
+      });
+    }
+
+  </script>
+    <script type="text/javascript">
+
+          var fieldNameList = [];
+
+          
+
+          markFieldErrors(fieldNameList);
+        </script>
+  </head>
+  <body>
+    <div class="skip-nav-link">
+      <a href="#main">Skip to main content</a>
+    </div>
+    <div id="container">
+      <div>
+        <img src="C_3_1_files/att_globe_logo.png" alt="at&amp;t">
+      </div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="http://192.168.1.254/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_1_0">Broadband</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <span>Firewall</span>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.254/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_0">Status</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://192.168.1.254/xslt?PAGE=C_3_1">Applications, Pinholes and DMZ</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_2">Advanced Configuration</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_3">Firewall Rules</a>
+                  </li>
+                  <li>
+                    <a href="http://192.168.1.254/xslt?PAGE=C_3_4">Parental Control</a>
+                  </li>
+                </ul>
+              </div>
+              <h2>Allow device application traffic to pass through firewall</h2>
+              <p>By default, the firewall blocks all unwanted access 
+from the Internet.  You can allow access from the Internet to 
+applications running on computers inside your secure home network by 
+enabling firewall pinholes.  Opening firewall pinholes is also known as 
+opening firewall ports or firewall port forwarding.  To do this, 
+associate the desired application with the computer below.  If you 
+cannot find a listing for your application, you can create a 
+user-defined application with the protocol and port information.</p>
+              <p>To allow Internet traffic or users through the Firewall to your LAN devices, applications and servers</p>
+              <form name="pagepost2" method="post" action="xslt?PAGE=C_3_1" id="pagepost2">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <fieldset class="stealth"><legend class="stealth4">1) Select a computer</legend><p>Choose the computer that will host applications through the firewall</p><img class="centerimg" alt="Wireless" src="C_3_1_files/icon_small_wireless.gif">You have chosen eevee<br><img class="centerimg" alt="Wireless" src="C_3_1_files/icon_small_wireless.gif"><a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=2">Choose OnePlus5</a><br><img class="centerimg" alt="PC icon" src="C_3_1_files/icon_small_pc.gif"><label for="ROUTER_IP">Enter IP address</label><input type="text" name="IPADDR" id="ROUTER_IP" title="Enter IP address"><input type="submit" name="choose_ip" class="button" value="Choose"><br></fieldset>
+              </form>
+              <p>Note: Use IP address format - xxx.xxx.xxx.xxx, where xxx represents the number (0-255).</p>
+              <form name="pagepost" method="post" action="xslt?PAGE=C_3_1_POST&amp;NEXTPAGE=C_3_1_POST" id="pagepost">
+                <input type="hidden" name="NONCE" value="f07aca90487a206">
+                <input type="hidden" name="THISPAGE" value="C_3_1">
+                <input type="hidden" name="NODEID" value="1">
+                <input type="hidden" name="IPADDR" value="">
+                <fieldset class="stealth">
+                  <legend class="stealth4">2)  Edit firewall settings for this computer</legend>
+                  <p>
+                    <input type="radio" name="FWALLOW" id="FWALLOW_MAX" value="NO_TRAFFIC" checked="checked">
+                    <label for="FWALLOW_MAX">Maximum protection - Disallow unsolicited inbound traffic</label>
+                  </p>
+                  <p>
+                    <input type="radio" name="FWALLOW" id="FWALLOW_INDIVIDUAL" value="SOME_TRAFFIC">
+                    <label for="FWALLOW_INDIVIDUAL">Allow individual 
+application(s) - Choose the application(s) that will be enabled to pass 
+through the firewall to this computer.  Click ADD to add it to the 
+Hosted Applications list.</label>
+                  </p>
+                  <div class="form-group-4">
+                    <div class="col-a greyboldcenter">Filter Applications by</div>
+                    <div class="col-b greyboldcenter">
+                      <label for="APP_LIST">Application List</label>
+                    </div>
+                    <div class="col-c greyboldcenter">Action</div>
+                    <div class="col-d greyboldcenter">
+                      <label for="HOSTED_APPS">Hosted Applications</label>
+                    </div>
+                  </div>
+                  <div class="form-group-4">
+                    <div class="col-a">
+                      <ul>
+                        <li>
+                          <span>All applications</span>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=GAMES#application">Games</a>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=AUDVIDEO#application">Audio/video</a>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=MIP#application">Messaging and Internet Phone</a>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=SERVER#application">Servers</a>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=OTHER#application">Other</a>
+                        </li>
+                        <li>
+                          <a href="http://192.168.1.254/xslt?PAGE=C_3_1&amp;NODEID=1&amp;CATEG=USER#application">User-defined</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-b">
+                      <select name="APPS" id="APP_LIST" multiple="multiple" size="10" class="textmono" style="width:13.5em" title="Application List">
+                        <option value="0">6in4 Tunnel</option>
+                        <option value="1">Active Worlds</option>
+                        <option value="2">Age of Empires</option>
+                        <option value="3">Age of Kings</option>
+                        <option value="4">Age of Wonders</option>
+                        <option value="5">Aliens vs Predator</option>
+                        <option value="6">America Online (AIM Talk)</option>
+                        <option value="7">Anarchy Online</option>
+                        <option value="8">AOL Instant Messenger</option>
+                        <option value="9">Asheron's Call</option>
+                        <option value="10">Audiogalaxy Satellite</option>
+                        <option value="11">Baldur's Gate</option>
+                        <option value="12">BattleCom</option>
+                        <option value="13">Battlefield Communicator</option>
+                        <option value="14">Black and White</option>
+                        <option value="15">Buddy Phone</option>
+                        <option value="16">Calista IP Phone</option>
+                        <option value="17">Camerades</option>
+                        <option value="18">CarbonCopy32 host</option>
+                        <option value="19">Citrix Metaframe / ICA Client</option>
+                        <option value="20">CnCNet</option>
+                        <option value="21">Counter Strike</option>
+                        <option value="22">CU-SeeMe</option>
+                        <option value="23">Dark Reign</option>
+                        <option value="24">Dark Reign 2</option>
+                        <option value="25">Deerfield MDaemon EMail Server</option>
+                        <option value="26">Delta Force</option>
+                        <option value="27">Delta Force 2</option>
+                        <option value="28">Delta Force: Land Warrior</option>
+                        <option value="29">Delta Three PC to Phone</option>
+                        <option value="30">Descent 3</option>
+                        <option value="31">Descent Freespace</option>
+                        <option value="32">Diablo (1.07+)</option>
+                        <option value="33">Diablo I</option>
+                        <option value="34">Diablo II</option>
+                        <option value="35">DialPad</option>
+                        <option value="36">Direct Connect</option>
+                        <option value="37">DirectX Games</option>
+                        <option value="38">DNS Server</option>
+                        <option value="39">Doom II(3)</option>
+                        <option value="40">Doom Server</option>
+                        <option value="41">Drakan</option>
+                        <option value="42">Dune 2000</option>
+                        <option value="43">Dwyco Video Conferencing</option>
+                        <option value="76">Echo</option>
+                        <option value="44">Elite Force</option>
+                        <option value="45">Everquest</option>
+                        <option value="46">F-22 Raptor</option>
+                        <option value="47">F16, Mig29</option>
+                        <option value="48">F22 Lightning 3</option>
+                        <option value="49">F22 Raptor (Novalogic)</option>
+                        <option value="50">Falcon 4.0</option>
+                        <option value="51">Fighter Ace II</option>
+                        <option value="52">Fighter Ace II DX</option>
+                        <option value="53">Flight Simulator 2000</option>
+                        <option value="54">Flight Simulator 2002</option>
+                        <option value="55">Flight Simulator 2004</option>
+                        <option value="56">Flight Simulator X</option>
+                        <option value="57">Freetel</option>
+                        <option value="58">FTP Server</option>
+                        <option value="59">FW1VPN</option>
+                        <option value="60">Gamespy</option>
+                        <option value="61">GameSpy Arcade</option>
+                        <option value="62">Gamespy Tunnel</option>
+                        <option value="63">Ghost Recon</option>
+                        <option value="64">Gnutella</option>
+                        <option value="65">Go2Call</option>
+                        <option value="66">Half Life</option>
+                        <option value="67">Half Life Server</option>
+                        <option value="68">Heretic II</option>
+                        <option value="69">Hexen II</option>
+                        <option value="70">HomeWorld</option>
+                        <option value="71">Hotline Connect 1.9</option>
+                        <option value="72">Hotline Server</option>
+                        <option value="73">HTTP Server</option>
+                        <option value="74">HTTPS Server</option>
+                        <option value="75">I'76</option>
+                        <option value="77">ICQ 2001b</option>
+                        <option value="78">ICQ Old</option>
+                        <option value="79">ICUII Client</option>
+                        <option value="80">ICUII Client Version 4.xx</option>
+                        <option value="81">IMAP Client</option>
+                        <option value="82">IMAP Client V.3</option>
+                        <option value="83">IMAP Server</option>
+                        <option value="84">Internet Phone</option>
+                        <option value="85">iPhone</option>
+                        <option value="86">IPSec ESP</option>
+                        <option value="87">IPSec IKE</option>
+                        <option value="88">IRC</option>
+                        <option value="89">IRC DCC</option>
+                        <option value="90">IStreamVideo2HP</option>
+                        <option value="91">Ivisit</option>
+                        <option value="92">KALI</option>
+                        <option value="93">KaZaA</option>
+                        <option value="94">Kohan Immortal Sovereigns</option>
+                        <option value="95">L2TP</option>
+                        <option value="96">LapLink Gold</option>
+                        <option value="97">LapLink Host</option>
+                        <option value="98">LapLink Sharedirect</option>
+                        <option value="99">Limewire</option>
+                        <option value="100">LIVvE</option>
+                        <option value="101">Location Free</option>
+                        <option value="102">Lotus Notes server</option>
+                        <option value="103">MechWarrior 3</option>
+                        <option value="104">Mechwarrior 4</option>
+                        <option value="105">Medal of Honor: Allied Assault</option>
+                        <option value="106">Micrsoft DirectPlay</option>
+                        <option value="107">Midtown Madness</option>
+                        <option value="108">MiG-29 Fulcrum</option>
+                        <option value="109">mIRC Chat</option>
+                        <option value="110">mIRC DCC</option>
+                        <option value="111">mIRC IDENT</option>
+                        <option value="112">Motocross Madness</option>
+                        <option value="113">Motorhead Server</option>
+                        <option value="114">MPlayer Games Network</option>
+                        <option value="115">MSN Gaming Zone</option>
+                        <option value="116">MSN Gaming Zone DX</option>
+                        <option value="117">MSN Messenger</option>
+                        <option value="118">Myth (Bungie.net Myth II)</option>
+                        <option value="119">Myth: The Fallen Lords</option>
+                        <option value="120">Napster</option>
+                        <option value="121">Need for Speed</option>
+                        <option value="122">Need for Speed 3</option>
+                        <option value="123">Need for Speed Underground 2</option>
+                        <option value="124">Net2Phone</option>
+                        <option value="125">NetMech</option>
+                        <option value="126">Netmeeting, Default PC</option>
+                        <option value="127">NNTP Server</option>
+                        <option value="128">Nox</option>
+                        <option value="129">OKWeb</option>
+                        <option value="130">OKWin</option>
+                        <option value="131">Operation FlashPoint</option>
+                        <option value="132">Origin</option>
+                        <option value="133">Outlaws</option>
+                        <option value="134">Pal Talk</option>
+                        <option value="135">pcAnywhere v7.5</option>
+                        <option value="136">PCTelecommute</option>
+                        <option value="137">PhoneFree</option>
+                        <option value="138">Polycom ViaVideo H.323</option>
+                        <option value="139">POP Client</option>
+                        <option value="140">POP3 Server</option>
+                        <option value="141">PPTP Server</option>
+                        <option value="142">PS3</option>
+                        <option value="143">PS4</option>
+                        <option value="144">Quake II</option>
+                        <option value="145">Quake III</option>
+                        <option value="146">Quake III Server</option>
+                        <option value="147">QuakeWorld</option>
+                        <option value="148">QuickTime Server</option>
+                        <option value="149">RAdmin</option>
+                        <option value="150">Rainbow Six</option>
+                        <option value="151">RDP</option>
+                        <option value="152">RealAudio</option>
+                        <option value="153">Red Alert</option>
+                        <option value="154">Remote Anything</option>
+                        <option value="155">Remote Desktop 32</option>
+                        <option value="156">Remotely AnyWhere</option>
+                        <option value="157">Remotely Possible Server</option>
+                        <option value="158">Return to Castle Wolfenstein</option>
+                        <option value="159">Rise of Nations</option>
+                        <option value="160">Rise of Rome</option>
+                        <option value="161">Roger Wilco</option>
+                        <option value="162">Rogue Spear</option>
+                        <option value="163">RTSP</option>
+                        <option value="164">Scour Media</option>
+                        <option value="165">SCP Secure Copy</option>
+                        <option value="166">Shiva VPN</option>
+                        <option value="167">ShoutCast Server</option>
+                        <option value="168">SIP</option>
+                        <option value="169">Slingbox</option>
+                        <option value="170">SMTP Server</option>
+                        <option value="171">Soldier of Fortune</option>
+                        <option value="172">Speak Freely</option>
+                        <option value="173">SQL-NET Tools</option>
+                        <option value="174">SSH Server</option>
+                        <option value="175">StarCraft</option>
+                        <option value="176">Starfleet Command</option>
+                        <option value="177">Starsiege: Tribes</option>
+                        <option value="178">Steam Client</option>
+                        <option value="179">SWAT3</option>
+                        <option value="180">Talkd</option>
+                        <option value="181">Telnet Server</option>
+                        <option value="182">The 4th Coming</option>
+                        <option value="183">Timbuktu Pro</option>
+                        <option value="184">Total Annihilation</option>
+                        <option value="185">Ultima</option>
+                        <option value="186">Unreal Server</option>
+                        <option value="187">Unreal Tournament</option>
+                        <option value="188">Usenet News Service</option>
+                        <option value="189">VDO Video</option>
+                        <option value="190">Via Video</option>
+                        <option value="191">Virtual Network Computing</option>
+                        <option value="192">VNC</option>
+                        <option value="193">VoxChat</option>
+                        <option value="194">VoxPhone 3.0</option>
+                        <option value="195">Warbirds 2</option>
+                        <option value="196">Web Server</option>
+                        <option value="197">Webcam32</option>
+                        <option value="198">WebPhone 3.0</option>
+                        <option value="199">Westwood Online</option>
+                        <option value="200">Wii Call of Duty - Black Ops</option>
+                        <option value="201">Wii Call of Duty - Modern Warfare 3</option>
+                        <option value="202">Wii GoldenEye 007</option>
+                        <option value="203">Windows 2000 Terminal Server</option>
+                        <option value="204">WinMX</option>
+                        <option value="205">X Windows</option>
+                        <option value="206">XBox</option>
+                        <option value="207">XBox 360</option>
+                        <option value="208">XBox One</option>
+                        <option value="209">XP Remote Assistance</option>
+                        <option value="210">XP Remote Desktop</option>
+                        <option value="211">Yahoo Messenger Chat</option>
+                        <option value="212">Yahoo Messenger Phone</option>
+                        <option value="213">Yahoo Pager</option>
+                        <option value="214">ZNES</option>
+                      </select>
+                    </div>
+                    <div class="col-c center-aligner">
+                      <input type="submit" name="ADD" class="button" value="Add">
+                      <br>
+                      <input type="submit" name="REMOVE" class="button" value="Remove">
+                    </div>
+                    <div class="col-d">
+                      <select name="HOSTAPPS" id="HOSTED_APPS" multiple="multiple" size="10" class="textmono" style="width:13.5em" title="Hosted Applications"></select>
+                    </div>
+                  </div>
+                  <div class="form-group-4">
+                    <div class="col-a"></div>
+                    <div class="col-b">
+                      <a href="http://192.168.1.254/xslt?PAGE=C_3_1a">Add a new user-defined application</a>
+                    </div>
+                    <div class="col-c"></div>
+                    <div class="col-d"></div>
+                  </div>
+                  <p>
+                    <input type="radio" name="FWALLOW" id="FWALLOW_ALL" value="ALL_TRAFFIC">
+                    <label for="FWALLOW_ALL">Allow all applications 
+(DMZplus mode) - Set the selected computer in DMZplus mode.  All inbound
+ traffic, except traffic which has been specifically assigned to another
+ computer using the "Allow individual applications" feature, will 
+automatically be directed to this computer.   The DMZplus-enabled 
+computer is less secure because all unassigned firewall ports are opened
+ for that computer.</label>
+                  </p>
+                  <p>Note: On LAN devices which have a Private IP 
+address, once DMZplus mode is selected and you click save, the system 
+will issue a new IP address to the selected computer.  The computer must
+ be set to DHCP mode to receive the new IP address from the system, and 
+you must reboot the computer.  If you are changing DMZplus mode from one
+ computer to another computer, you must reboot both computers.</p>
+                </fieldset>
+                <p align="right">
+                  <input type="submit" name="SAVE" class="button" value="Save">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
