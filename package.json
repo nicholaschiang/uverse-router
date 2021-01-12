@@ -1,0 +1,14 @@
+{
+  "name": "uverse-router",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nicholaschiang/uverse-router",
+  "author": "Nicholas Chiang <nicholas.h.chiang@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve"
+  },
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
+}
